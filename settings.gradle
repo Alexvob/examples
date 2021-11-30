@@ -1,3 +1,0 @@
-include ':app'
-rootProject.name='Progress Monitor'
-include ':library_licensing'
