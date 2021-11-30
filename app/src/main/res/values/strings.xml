@@ -1,0 +1,490 @@
+<resources>
+    <string name="app_name">ProgressMonitor</string>
+    <string name="version_name">Application version: %1$s</string>
+    <string name="network_status_online">Connected to the network</string>
+    <string name="network_status_offline">Disconnected from the network</string>
+
+
+    <!-- Promo -->
+
+    <string name="promo_request_too_large">The download file is too large</string>
+
+
+    <!-- Project -->
+
+    <string name="project_title">Projects</string>
+
+
+    <!-- GroupPolicies -->
+
+    <string name="save">Save</string>
+
+
+    <!-- Post -->
+
+    <string name="structure_scheme">Structural scheme:</string>
+
+    <string name="post_spinner_change_employee">Select employee</string>
+    <string name="post_checkbox_change_employees">Select employees</string>
+    <string name="post_employee">Employee</string>
+    <string name="post_superior">Superior</string>
+    <string name="post_name">Position</string>
+    <string name="post_example_name">Job title</string>
+    <string name="post_not_assigned">Not assigned</string>
+    <string name="post_current_assignment_table">Current assignment table</string>
+    <string name="post_appoint_post">Appoint a post</string>
+    <string name="post_cancel_appointment">Cancel appointment</string>
+    <string name="post_change_parent">Transfer employees to another manager</string>
+    <string name="post_to_appoint">To appoint</string>
+    <string name="post_appoint_chief_executive">Appoint a chief executive</string>
+    <string name="post_select_chief_executive">Select a chief executive</string>
+    <string name="post_example_senior_manager">Senior manager</string>
+    <string name="post_example_general_manager">General Director</string>
+    <string name="prompt_change_superior">Choose a leader</string>
+    <string name="prompt_change_new_superior">Choose a new leader</string>
+    <string name="post_instruction_chief">It is necessary to determine the main leader, who will be the first, top element of the organizations structural diagram:</string>
+    <string name="post_instruction_employee">After selecting an employee from the first list, enter the name of his position, and select his immediate supervisor from the second list of employees:</string>
+    <string name="post_instruction_change_parent">For vacation time or for any other reason, you can assign a group of employees to another manager. To do this, select the current leader, in the list of his subordinates, select the employees to be moved, and select a new leader for them</string>
+    <string name="post_instruction_deleting">The selected employee ceases to be associated with the immediate supervisor, and for everyone for whom he was the immediate supervisor, if necessary, establish a new immediate supervisor, otherwise they will not be visible on the structural diagram (since they will be tied to an employee who does not have a position in the diagram):</string>
+    <string name="post_not_yourself">Not yourself</string>
+    <string name="post_actual_parent">The current leader:</string>
+    <string name="post_new_parent">New leader:</string>
+
+    <string name="immediate_superior">Immediate superior</string>
+
+
+    <!-- Planing -->
+
+    <string name="personal_plans">Personal</string>
+    <string name="group_plans">Group</string>
+    <string name="select_plan">Choose a plan</string>
+    <string name="rejected">Rejected</string>
+    <string name="not_accepted">Not set</string>
+    <string name="control_child_plan">Controllability of the plans of subordinates</string>
+    <string name="select_period_statistic_plan">Select period</string>
+    <string name="select_period_week">Week</string>
+    <string name="select_period_month">Month</string>
+    <string name="select_period_six_months">Six months</string>
+
+    <string name="title_personal_stat">Personal statistics</string>
+    <string name="index">Index</string>
+    <string name="value">Value</string>
+    <string name="value_h_m">H : m</string>
+    <string name="units">Units</string>
+    <string name="percent">%</string>
+    <string name="number_all_plan">Planned:\u0020</string>
+    <string name="number_completed_plan">Completed:\u0020</string>
+    <string name="number_incomplete_plan">Incomplete:\u0020</string>
+    <string name="number_rejected_plan">Rejected:\u0020</string>
+
+    <string name="title_subordinate_stat">Subordinate statistics</string>
+    <string name="number_child_employees">Subordinates:\u0020</string>
+    <string name="employees">(employees: </string>
+    <string name="relative_indicators">Relative indicators:</string>
+    <string name="planning_rate">Planning rate:</string>
+    <string name="actual_planning">Actual planning:</string>
+    <string name="actual_execution">Actual execution:</string>
+    <string name="hint_planning_rate">(All scheduled group time for the period / Number of employees)</string>
+    <string name="hint_actual_planning">(Planned / Planning rate)</string>
+    <string name="hint_actual_execution">(Completed / Planning rate)</string>
+    <string name="hint_planning_rate_sub">(Group planning rate * Number of subordinates)</string>
+
+
+    <string name="notification_channel_id_foreground">foreground_notifications</string>
+    <string name="notification_channel_id_push">push_notifications</string>
+    <string name="default_notification_channel_id">push_notifications</string>
+    <string name="notification_channel_name_foreground">Service notifications</string>
+    <string name="notification_channel_name_push">Incoming notifications</string>
+    <string name="notification_channel_description_foreground">Synchronization status notifications, network etc.</string>
+    <string name="notification_channel_description_push">Notifications about incoming tasks and other events</string>
+
+
+    <!-- Titles Bar, any -->
+    <string name="tasks">Tasks</string>
+    <string name="plans">Plans</string>
+
+
+    <string name="incoming">Inbox</string>
+    <string name="outbox">Outbox</string>
+    <string name="other">Other</string>
+
+    <string name="sort_active">ACTIVE</string>
+    <string name="sort_archive">ARCHIVE</string>
+    <string name="sort_inactive">COMPLETED</string>
+    <string name="sort_canceled">CANCELED</string>
+    <string name="sort_open">OPEN</string>
+    <string name="sort_closed">COMPLETED</string>
+
+    <!--AlertDialog -->
+    <string name="alert_dialog_button_positive">Yes</string>
+    <string name="alert_dialog_button_negative">Not</string>
+
+    <string name="alert_dialog_mess_success_non_details">Successfully completed</string>
+    <string name="alert_dialog_mess_success_add_user">User added successfully, password sent via SMS</string>
+    <string name="alert_dialog_mess_success_add_user_send_sms">User added. Login: %1$s, password: %2$s. Send him his password in SMS?</string>
+    <string name="alert_dialog_mess_success_rewrite_password_send_sms">Password changed. Login: %1$s, new password: %2$s. Send this data to yourself in SMS?</string>
+    <string name="alert_dialog_mess_success_create_group_password_send_sms">The group has been created. Your administrator login: %1$s, password: %2$s. Send this data to yourself in SMS?</string>
+    <string name="alert_dialog_mess_fail_create_group">Failed to create group, please try again later</string>
+    <string name="alert_dialog_mess_add_user_send_sms_content">ProgressMonitor: login: %1$s, password: %2$s</string>
+    <string name="alert_dialog_mess_add_user_send_sms_not_available">Sending sms is not available</string>
+    <string name="alert_dialog_mess_success_delete_user">User deleted successfully</string>
+    <string name="alert_dialog_mess_delete_task">Delete task?</string>
+
+
+    <string name="alert_dialog_mess_reject_plan">Reject plan item?</string>
+    <string name="alert_dialog_mess_delete_plan">Delete plan item?</string>
+
+
+    <string name="alert_dialog_mess_fail_phone_or_password">Invalid number or password</string>
+    <string name="alert_dialog_mess_user_not_found">User with this number does not exist</string>
+    <string name="alert_dialog_mess_fail_cut">Something is wrong, please try again later, or inform the administrator</string>
+    <string name="alert_dialog_mess_fail_full">Something is wrong, check the internet, try again later, or inform the administrator</string>
+    <string name="alert_dialog_mess_connect_fail">Connection problems, check the internet, try again later, or inform the administrator</string>
+    <string name="billing_success">Payment was successful, full access to the group was obtained</string>
+    <string name="billing_fail">Problems with the payment service, please try again later</string>
+    <string name="billing_user_canceled">You refused to pay</string>
+    <string name="billing_fail_refund">Problems with the payment service, please try again later, if the problem persists, the payment will be automatically refunded within 3 days</string>
+
+    <string name="success_synchronized">Synchronized: </string>
+    <string name="fail_synchronized">Sync failure: </string>
+    <string name="new_task_notification">Incoming new task</string>
+
+    <string name="alert_dialog_mess_delete_user">The tasks created by him will also be deleted, continue?</string>
+    <string name="alert_dialog_mess_you_deleted">You were dropped from the group</string>
+    <string name="alert_dialog_mess_group_blocked">Trial period expired</string>
+    <string name="alert_dialog_mess_group_not_found">Group not found</string>
+    <string name="alert_dialog_mess_set_another_admin">Your administrator rights will be transferred to the selected user, continue?</string>
+
+    <!--Example: Hint + binding <string name="task_title">Имя задачи: %s</string>  -->
+    <string name="hint_task_from">Creator:</string>
+    <string name="hint_task_for">Recipient:</string>
+    <string name="hint_task_desc">Description of the task:</string>
+    <string name="hint_task_status">Task status:</string>
+    <string name="hint_task_time_limit">Period of execution:</string>
+    <string name="hint_task_created">The task was created:</string>
+    <string name="hint_task_updated">Task changed:</string>
+    <string name="hint_task_recycler_view">Task list</string>
+    <string name="hint_question_recycler_view">Question list</string>
+    <string name="example_phone_number">Example: +1XXXXXXXXXXX</string>
+
+
+    <string name="status_task_active">Active</string>
+    <string name="status_task_inactive">Completed</string>
+    <string name="status_task_canceled">Canceled</string>
+
+    <string name="task_title_default">Title</string>
+    <string name="task_desc">%s</string>
+    <string name="task_from">%s</string>
+    <string name="for_fio">For whom: %s</string>
+    <string name="from_fio">From whom: %s</string>
+    <string name="hint_done_task">Make the task complete:</string>
+    <string name="hint_deactivate_task">Temporarily cancel the task:</string>
+    <string name="hint_activate_task">Make the task active:</string>
+    <string name="hint_delete_task">Delete task:</string>
+    <string name="hint_create_task">Create task</string>
+    <string name="hint_create_question">Create question</string>
+    <string name="delete">Delete</string>
+    <string name="task_status">%s</string>
+    <string name="task_time_limit">%s</string>
+    <string name="task_createdAt">%s</string>
+    <string name="task_updatedAt">%s</string>
+    <string name="help">Help</string>
+    <string name="activate">Activate</string>
+    <string name="deactivate">Cancel</string>
+    <string name="done">Performed</string>
+
+    <string name="menu_refresh">Update the data</string>
+    <string name="menu_user_control">Group management</string>
+    <string name="menu_logout">Logout</string>
+
+
+    <string name="hint_tvDate">Select date</string>
+    <string name="hint_tvDurationPlan">Select the duration of the work</string>
+    <string name="hint_advertising"> </string>
+
+    <string name="from_me">I</string>
+    <string name="for_me">I</string>
+
+    <string name="title_login_screen">Join the group</string>
+    <string name="title_new_group_screen">To create a group</string>
+    <string name="title_help_screen">Application Help</string>
+    <string name="title_user_control_screen">Group management</string>
+    <string name="title_settings_screen">Settings</string>
+    <string name="confirm_logout">Leave the group?</string>
+    <string name="title_voting_screen">Voting</string>
+    <string name="title_structural_scheme">Structural scheme</string>
+
+
+    <!--LoginActivity -->
+    <string name="enter_pass">Enter password</string>
+    <string name="restore_pass_hint"><u>Restore password</u></string>
+    <string name="restore_pass_hint_firebase"><u>By phone number</u></string>
+    <string name="restore_pass_hint_email"><u>By e-mail</u></string>
+    <string name="create_group_hint"><u>Create a new group</u></string>
+
+
+    <!--UserCreationActivity -->
+
+
+    <!--UserControlActivity -->
+    <string name="add_new_user">Add new user</string>
+    <string name="add_new_user_btn">Add user</string>
+    <string name="delete_user">Remove user from group</string>
+    <string name="delete_user_hint">Select the user to be deleted</string>
+    <string name="delete_user_btn">Delete user</string>
+    <string name="transfer_administrator_rights"><u>Transfer administrator rights</u></string>
+    <string name="delete_group"><u>Delete group</u></string>
+    <string name="message_delete_group">To remove a group, contact us: \n <b>com.astudio.office@gmail.com</b></string>
+    <string name="transfer_administrator_btn">Make admin</string>
+    <string name="hint_another_admin">Select a new administrator</string>
+
+
+    <!--NewTaskActivity -->
+    <string name="task_recipient">Task recipient:</string>
+    <string name="change_recipient">Select task executor:</string>
+    <string name="change_task_limit">Enter due date:</string>
+    <string name="enter_task_desc">Enter task description:</string>
+    <string name="task_desc_hint">Task description:</string>
+
+
+    <!--NewGroupActivity -->
+    <string name="name_company">Group:</string>
+    <string name="name_company_length">Maximum 20 characters</string>
+    <string name="name_admin">Enter surname, name</string>
+    <string name="name_admin_hint">Example: Smith.J.</string>
+
+
+    <!--StatisticActivity -->
+    <string name="statistic_title">Statistics</string>
+    <string name="number_users">Number of users</string>
+    <string name="group_admin_name">Group admin</string>
+    <string name="active_tasks_group">Active tasks in the group</string>
+    <string name="active_tasks_for_me">Active tasks for me</string>
+    <string name="active_tasks_from_me">Active tasks from me</string>
+    <string name="unfulfilled_tasks">Active</string>
+    <string name="canceled_tasks">Canceled</string>
+    <string name="completed_tasks">Completed</string>
+    <string name="cumulative_tasks">Cumulative total of active tasks</string>
+    <string name="january">Jan</string>
+    <string name="february">Feb</string>
+    <string name="march">Mar</string>
+    <string name="april">Apr</string>
+    <string name="may">May</string>
+    <string name="june">Jun</string>
+    <string name="july">Jul</string>
+    <string name="august">Aug</string>
+    <string name="september">Sep</string>
+    <string name="october">Oct</string>
+    <string name="november">Nov</string>
+    <string name="december">Dec</string>
+
+
+    <!--RatingActivity -->
+    <string name="rating_title">Rating</string>
+    <string name="top5">Top-5:</string>
+    <string name="pie_label_up">Level increase</string>
+    <string name="pie_label_balance">Balance to a new level</string>
+
+
+    <!--VotingActivity -->
+    <string name="voting_title">Voting</string>
+
+
+    <!--NewQuestionActivity -->
+    <string name="change_question_limit">Choose a voting period (days):</string>
+    <string name="enter_question_desc">Enter a description for the question:</string>
+    <string name="question_desc_hint">Description of the question:</string>
+    <string name="new_question_title">Create a question</string>
+
+    <!-- QuestionDescActivity -->
+    <string name="hint_end_voting">End:</string>
+    <string name="hint_create_voting">Start:</string>
+
+
+    <!--RestorePassActivity -->
+    <string name="restore_pass_title">Password recovery</string>
+    <string name="restore_pass_quota">Too many requests, please try again later</string>
+    <string name="restore_pass_invalid_format_phone">Invalid number format</string>
+    <string name="restore_pass_invalid_format_code">Invalid sms code format</string>
+    <string name="restore_pass_invalid_code">Invalid sms code</string>
+    <string name="restore_pass_phone_num_hint">Enter your phone number</string>
+    <string name="restore_pass_sms_code_hint">Enter code from SMS</string>
+    <string name="restore_pass_step1">Step 1</string>
+    <string name="restore_pass_step2">Step 2</string>
+    <string name="send_phone">Send number</string>
+    <string name="send_code">Send code</string>
+    <string name="sms_should_minute">SMS should come within a minute, if not received:</string>
+    <string name="get_code_again"><u>Request SMS - code again</u></string>
+
+
+    <!--RestorePassEmailActivity -->
+    <string name="restore_pass_invalid_format_email">Invalid e-mail format</string>
+    <string name="restore_pass_invalid_restore_code">Incorrect code</string>
+    <string name="restore_pass_email_hint">Enter e-mail</string>
+    <string name="example_email">Example: johnsmith@gmail.com</string>
+    <string name="send_code_email">Send code to email</string>
+    <string name="restore_pass_email_code_hint">Enter the code from the letter</string>
+
+
+    <string name="cont_desc_toolbar">Make completed</string>
+    <string name="cont_desc_btn_back">Come back</string>
+
+
+    <string name="create_task_btn">Create</string>
+
+
+    <string name="create_group_btn">To create a group</string>
+
+
+    <string name="empty_text_error_message">The field cannot be empty</string>
+    <string name="max_length_text_error_message">The name should be no more</string>
+    <string name="max_length_long_text_error_message">There should be no more</string>
+    <string name="symbol"> characters</string>
+    <string name="invalid_date">Invalid date</string>
+    <string name="invalid_duration">Determine the duration</string>
+
+    <string name="prompt_change_user">Select user</string>
+
+
+    <!--Settings -->
+    <string name="preference_group_general">General settings</string>
+    <string name="foreground_mode">Auto sync</string>
+    <string name="preference_group_logout">Leaving the group</string>
+
+
+    <!--HelpActivity -->
+    <string name="help_tab_host"><b>List of tasks: </b>
+        \nTasks are divided into three types:
+        \n<i>INCOMING </i> - tasks created by another group member for us,
+        \n<i>OUTCOMING </i> - tasks created by us for another group member ,
+        \n<i>GENERAL </i> - tasks created by other members of the group, and not for us. Each task can have three states:
+        \n<i>ACTIVE </i> - not completed and not canceled task,
+        \n<i>COMPLETED </i> - completed task,
+        \n<i>CANCELED </i> - not completed, temporarily canceled task.
+        \nIn each list of tasks, it is possible to make a selection based on the status of tasks using the drop-down menu above the list of tasks.
+        \n\nTo view a detailed description of a task, tap the selected task line in the task list. To return to the task list - select the <u> Back </u> arrow-shaped icon at
+        the top of the application.
+        \n\n<b>Creating a new task:
+        \n</b>To create a new task, click on the floating button in the lower right corner of the task list.
+        \n\n<b>List refresh: </b>
+        \nThe task list is automatically synchronized with the entire group every 15 minutes, provided
+        that the application is active. The status of the last update is displayed in a notification in the phone notification bar Also,
+        the list will be automatically synchronized if a new task appears in the group. To update manually, on the screen of any task list,
+        drag the list down by touching until the loading indicator appears. Alternatively, in the application menu, select <u> Refresh data </u>.
+        \n<i>Depending on the mobile device</i>, the operation of the application in the background may be limited by the operating system, so that
+        the data is guaranteed to be up-to-date - in the application settings, enable \"Autostart\" or similarly remove restrictions on background operation.
+    </string>
+
+    <string name="help_task_description"><b>Viewing and managing a task: </b>
+        \n - tasks created by us can be managed - change status, delete. To transfer a task to the status \"<i>completed</i>\" or
+        \"<i>canceled</i>\", click on the corresponding icon in the task description or in the application menu. A canceled task can be
+        returned to the active status. A completed or canceled task can be deleted, this task will be deleted for the entire group.
+        \nTasks not created by us are available only for viewing.
+    </string>
+
+    <string name="help_new_task"><b>Creating a task:</b>
+        \n - in the drop-down list, select a group member for whom the task is being created, by clicking on the date line - select the
+        desired deadline for the task, enter the task description in the task description field. After filling in all the fields,
+        click on the confirmation icon in the form of a checkmark at the top of the application.
+        \nTo return to the previous screen without creating a task, select the <u>Back</u> arrow-shaped icon at the top of the application.
+    </string>
+
+    <string name="help_statistic"><b>Group statistics:</b>
+        \n The sum of the tasks created for the period (month) is made up of completed, canceled, active (unfulfilled) tasks.
+    </string>
+
+    <string name="help_user_control"><b>Adding a user:</b>
+        \n - enter his full name in the format: <u>Surname, name</u>, his phone number, in the format: <u>+ 7XXXXXXXXX</u>,
+        confirm the entry.
+        \nIn case of successful addition, a pop-up message will appear containing the login and password of the created user,
+        transfer them to him, or confirm the sending in sms by clicking the \"<u>Yes</u>\" button.
+        Then you can return to adding the next user.
+        \n\n<b>Removing a user:</b>
+        \n - to remove a user from the group, select the user to be removed from the drop-down list, confirm the action. When a user is deleted,
+        the tasks created by him are also deleted.
+        \n\n<b>Change of administrator:</b>
+        \n - each group has a single administrator who has the ability to manage the group (add, delete users in the group).
+        To change the administrator, the current administrator must: activate the link \"<u>Transfer administrator rights</u>\" in
+        the \"<u>Group management</u>\" section, select the user appointed by the new administrator in the list of users that appears,
+        confirm the action. Then select \"<u>Update data</u>\" in the application menu for the new administrator.
+    </string>
+
+    <string name="help_login"><b>Enter the group:</b>
+        \n - enter the phone number in the appropriate field, in the format: <u>+7ХХХХХХХХХ</u>;
+        \n - enter the password previously received from the group administrator in the corresponding field;
+        \n - click the \"<u>Login</u>\" button.
+        \n\n<b>Password recovery:</b>
+        \n - if you were a member of the group, but the password was lost, then follow the link \"<u>Retrieve password</u>\" to go to the
+        password recovery screen.
+        \n\n<b>Creating a new group:</b>
+        \n - to create a new group, follow the link \"<u>Create a new group</u>\", go to the corresponding screen.
+        \n\n<b>Application Help</b> is present in every section and is available through the menu at the top of the application.
+    </string>
+
+    <string name="help_new_group"><b>Creation of a group:</b>
+        \n - fill in the field \"<i>Organization name</i>\", up to 20 characters, enter the full name of the group administrator,
+        in the format: <u>Surname, name.</u>, his phone number, in the format: <u>+7XXXXXXXXX</u>, confirm the entry, save the
+        login (phone number) and password for further entering the group.
+        \n\nTo return to the previous screen without creating a group, select the <u>Back</u> arrow-shaped icon at the top of the application.
+    </string>
+
+    <string name="help_restore_pass"><b>Password recovery:</b>
+        \n - enter the phone number in the appropriate field, in the format: <u>+7XXXXXXXXX</u>, confirm the entry;
+        \n - wait for an SMS message with a confirmation code (within a minute), enter the code in the appropriate field,
+        confirm the entry;
+        \n - if successful, a new password will be generated, which is required to enter the group, save it;
+        \n - if the sms with the code did not come, click on the link \"<i>Request SMS code again</i>\", and repeat the steps
+        from the first.
+        \n\nTo return to the previous screen, select the <u>Back</u> arrow-shaped icon at the top of the application.
+    </string>
+
+    <string name="help_rating">
+        <b>User rating: </b>
+        \n The user\'s rating is calculated based on his activity.
+        \n Creating a task, accepting a completed task - increases the rating. Completing tasks set by other users will further increase the rating. Canceling previously created tasks - decreases the rating. The user level increases when the rating is reached to the required value.
+        \n Working with tasks for yourself - does not affect the rating.
+    </string>
+
+    <string name="help_default">
+        <b>Help with the application</b> is present in every section and is available through the menu at the top of the application.
+    </string>
+
+
+    <string name="alert_dialog_mess_double_add_user">User with this number already exists</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+
+    <!-- А этот код мы используем для проверки того, как выглядит реальное склонение -->
+    <plurals name="plurals">
+        <item quantity="zero">нет котов</item>
+        <item quantity="one">%1$d кот</item>
+        <item quantity="two">%1$d кота</item>
+        <item quantity="few">%1$d кота</item>
+        <item quantity="many">%1$d котов</item>
+        <item quantity="other">%1$d котов</item>
+    </plurals>
+
+
+</resources>
+
+
+    <!--
+<string name="title_task">Id задачи: %1$s, имя задачи %2$s</string>
+android:text="@{@string/task_title(task.id, task.title)}">
+ https://developer.android.com/topic/libraries/data-binding/expressions#resources
+-->

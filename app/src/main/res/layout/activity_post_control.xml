@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".post.PostControlActivity">
+
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        app:cardMaxElevation="5dp"
+        app:contentPadding="0dp">
+
+        <TextView
+            android:id="@+id/link_to_add_post"
+            style="@style/TitleText"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:text="@string/post_appoint_post"
+            android:textSize="18sp" />
+
+    </androidx.cardview.widget.CardView>
+
+
+<!--
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        app:cardMaxElevation="5dp"
+        app:contentPadding="0dp">
+
+        <TextView
+            android:id="@+id/link_to_edit_post"
+            style="@style/TitleText"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:text="Изменить должность"
+            android:textSize="18sp" />
+
+    </androidx.cardview.widget.CardView>
+-->
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        app:cardMaxElevation="5dp"
+        app:contentPadding="0dp">
+
+        <TextView
+            android:id="@+id/link_to_delete_post"
+            style="@style/TitleText"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:text="@string/post_cancel_appointment"
+            android:textSize="18sp" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        app:cardMaxElevation="5dp"
+        app:contentPadding="0dp">
+
+        <TextView
+            android:id="@+id/link_to_change_parent"
+            style="@style/TitleText"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:text="@string/post_change_parent"
+            android:textSize="18sp" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2.8dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="15dp"
+        android:background="@android:color/darker_gray"
+        android:visibility="visible" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_change_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp"
+                app:cardMaxElevation="5dp"
+                app:contentPadding="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TitleText"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/post_change_parent" />
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="5dp"
+                        android:text="@string/post_instruction_change_parent" />
+
+                    <TextView
+                        style="@style/HintTextAdmin"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/post_actual_parent" />
+
+                    <Spinner
+                        android:id="@+id/post_select_actual_parent"
+                        android:layout_width="300dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center_horizontal"
+                        android:spinnerMode="dialog" />
+
+                    <TextView
+                        android:id="@+id/title_checkbox_change_employees"
+                        style="@style/HintTextAdmin"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/post_checkbox_change_employees" />
+
+
+                    <LinearLayout
+                        android:id="@+id/post_root_checkbox_employees"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal"/>
+
+
+                    <TextView
+                        android:id="@+id/title_spinner_new_parent"
+                        style="@style/HintTextAdmin"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/post_new_parent" />
+
+                    <Spinner
+                        android:id="@+id/post_select_new_parent"
+                        android:layout_width="300dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center_horizontal"
+                        android:spinnerMode="dialog" />
+
+                    <Button
+                        android:id="@+id/post_change_new_parent_btn"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:onClick="changeParentOnClick"
+                        android:text="@string/post_to_appoint" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_select_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp"
+                app:cardMaxElevation="5dp"
+                app:contentPadding="0dp">
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        style="@style/TitleText"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/post_appoint_chief_executive"/>
+
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="5dp"
+                        android:text="@string/post_instruction_chief" />
+
+
+                    <EditText
+                        android:id="@+id/post_add_parent_post_name"
+                        android:layout_width="300dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:cursorVisible="true"
+                        android:hint="@string/post_example_name"
+                        android:inputType="textCapSentences"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="5dp"
+                        android:text="@string/post_example_general_manager" />
+
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/post_select_chief_executive" />
+
+                    <Spinner
+                        android:id="@+id/select_parent_spinner"
+                        android:layout_width="300dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="0dp"
+                        android:spinnerMode="dialog" />
+
+                    <Button
+                        android:id="@+id/select_parent_btn"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="15dp"
+                        android:onClick="selectParentGroup"
+                        android:text="@string/post_to_appoint" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_add_post"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp"
+                app:cardMaxElevation="5dp"
+                app:contentPadding="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TitleText"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/post_appoint_post" />
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="5dp"
+                        android:text="@string/post_instruction_employee" />
+
+                    <Spinner
+                        android:id="@+id/post_select_add_user"
+                        android:layout_width="300dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center_horizontal"
+                        android:spinnerMode="dialog" />
+
+
+                    <EditText
+                        android:id="@+id/post_add_post_name"
+                        android:layout_width="300dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="17dp"
+                        android:cursorVisible="true"
+                        android:hint="@string/post_example_name"
+                        android:inputType="textCapSentences"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="5dp"
+                        android:text="@string/post_example_senior_manager" />
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="25dp"
+                        android:text="@string/prompt_change_superior" />
+
+                    <Spinner
+                        android:id="@+id/post_add_post_select_superior"
+                        android:layout_width="300dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center_horizontal"
+                        android:spinnerMode="dialog" />
+
+                    <Button
+                        android:id="@+id/post_add_post_btn"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:onClick="bindPost"
+                        android:text="@string/post_to_appoint" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+<!--
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_edit_post"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp"
+                app:cardMaxElevation="5dp"
+                app:contentPadding="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TitleText"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="Изменить должность" />
+
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="5dp"
+                        android:text="Инструкция - изменить наименование должности выбранного пользователя, или назначить другого непосредственного руководителя" />
+
+                    <Spinner
+                        android:id="@+id/post_select_edit_user"
+                        android:layout_width="300dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center_horizontal"
+                        android:prompt="@string/prompt_change_user"
+                        android:spinnerMode="dialog" />
+
+                    <EditText
+                        android:id="@+id/post_edit_post_name"
+                        android:layout_width="300dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="30dp"
+                        android:cursorVisible="true"
+                        android:hint="Наименование должности"
+                        android:inputType="textCapSentences"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="5dp"
+                        android:text="Выберите непосредственного руководителя" />
+
+                    <Spinner
+                        android:id="@+id/post_edit_post_select_superior"
+                        android:layout_width="300dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="0dp"
+                        android:prompt="@string/prompt_change_superior"
+                        android:spinnerMode="dialog" />
+
+                    <Button
+                        android:id="@+id/post_edit_post_btn"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="15dp"
+                        android:text="Изменить должность" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+-->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_delete_post"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp"
+                app:cardMaxElevation="5dp"
+                app:contentPadding="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        style="@style/TitleText"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/post_cancel_appointment" />
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="5dp"
+                        android:text="@string/post_instruction_deleting" />
+
+
+                    <Spinner
+                        android:id="@+id/post_delete_post"
+                        android:layout_width="300dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center_horizontal"
+                        android:spinnerMode="dialog" />
+
+                    <TextView
+                        android:id="@+id/post_deleting_post_name"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="15dp"
+                        android:textSize="18sp"
+                         />
+
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/post_name"
+                         />
+
+
+                    <Button
+                        android:id="@+id/post_deleting_btn"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="15dp"
+                        android:onClick="unbindPost"
+                        android:text="@string/post_cancel_appointment" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+<!--
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/structure_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_marginStart="30dp"
+                android:text="@string/hint_another_admin"
+                app:switchPadding="120dp" />
+-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/colorGrey"
+                android:typeface="serif"
+                android:text="@string/post_current_assignment_table"/>
+
+
+        <TableLayout
+            android:id="@+id/root_for_post_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+        </TableLayout>
+
+
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+</LinearLayout>

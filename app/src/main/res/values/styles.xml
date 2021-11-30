@@ -1,0 +1,201 @@
+<resources>
+
+    <!-- Base application theme. -->
+
+    <!--
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">-->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorAccent</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:dialogTheme">@style/MyDialogTheme</item>
+        <item name="android:datePickerStyle">@style/DatePickerTheme</item>
+
+    </style>
+
+
+    <style name="AppThemeSecond" parent="Theme.AppCompat.Dialog.MinWidth">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorDescBtnDone</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:dialogTheme">@style/MyDialogTheme</item>
+        <item name="android:datePickerStyle">@style/DatePickerTheme</item>
+
+    </style>
+
+
+    <style name="MyDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:datePickerStyle">@style/DatePickerTheme</item>
+    </style>
+
+
+    <style name="DatePickerTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:calendarViewShown">false</item>
+    </style>
+
+
+    <style name="CardViewMain">
+        <item name="cardCornerRadius">2dp</item>
+        <item name="cardElevation">2dp</item>
+        <item name="cardMaxElevation">4dp</item>
+        <item name="cardBackgroundColor">@color/colorCardViewMain</item>
+    </style>
+
+
+    <style name="SpinnerUsers" parent="Widget.AppCompat.Spinner">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/gradient_spinner</item>
+        <item name="android:layout_marginStart">12dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:popupBackground">#DFFFFFFF</item>
+    </style>
+
+
+    <style name="DatePickerCustom" parent="DatePickerTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/gradient_spinner</item>
+        <item name="android:layout_marginStart">12dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:popupBackground">#DFFFFFFF</item>
+    </style>
+
+
+    <style name="Toolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.ActionBar</item>
+        <item name="android:background">@color/colorToolbar</item>
+    </style>
+
+    <style name="ToolbarSecond">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.ActionBar</item>
+        <item name="android:background">@color/colorToolbarSecond</item>
+    </style>
+
+
+    <style name="ToolbarThird">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.ActionBar</item>
+        <item name="android:background">@color/colorToolbarThird</item>
+    </style>
+
+
+    <style name="ProgressIndicatorPlan" parent="Theme.AppCompat">
+        <item name="colorAccent">@color/colorGrey</item> <!-- Whatever color you want-->
+    </style>
+
+
+    <style name="BottomBar" parent="Theme.AppCompat.Light.NoActionBar" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+
+    </style>
+
+
+    <style name="Separator">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1.0dp</item>
+        <item name="android:visibility">visible</item>
+        <item name="android:layout_marginTop">5sp</item>
+        <item name="android:layout_marginBottom">5sp</item>
+        <item name="android:background">@android:color/darker_gray</item>
+    </style>
+
+
+    <style name="SeparatorCut">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">1.0dp</item>
+        <item name="android:visibility">visible</item>
+        <item name="android:layout_marginTop">5sp</item>
+        <item name="android:layout_marginBottom">5sp</item>
+        <item name="android:background">@android:color/darker_gray</item>
+    </style>
+
+    <style name="TitleText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+
+    <style name="MiddleText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+
+    <style name="HintTextTask">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorAccentTask</item>
+    </style>
+
+    <style name="HintTextPlan">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorAccentPlan</item>
+    </style>
+
+    <style name="HintTextProject">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorAccentProject</item>
+    </style>
+
+    <style name="HintTextAdmin">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorAccentTask</item>
+    </style>
+
+    <style name="HintTextError">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <!--
+    <style name="CustomTabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">15sp</item>
+    </style>
+-->
+
+    <!-- Not used -->
+    <style name="TabLayout_Theme" parent="Widget.Design.TabLayout">
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">true</item>
+
+    </style>
+
+
+</resources>
+
+

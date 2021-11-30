@@ -1,0 +1,110 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: 'com.squareup.leakcanary.deobfuscation'
+
+android {
+    compileSdkVersion 30
+    //buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.astudio.progressmonitor"
+        minSdkVersion 19
+        targetSdkVersion 30
+        versionCode 41
+        versionName "1.211001.41"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        resConfigs "en", "ru"
+        //multiDexEnabled true // add 16-04-2021 (for problem - limit 64KB)
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    buildTypes {
+
+        release {
+            minifyEnabled true // add 01-02-2021
+            shrinkResources true // add 01-02-2021
+            proguardFiles 'proguard-rules.pro', getDefaultProguardFile('proguard-android-optimize.txt')
+        }
+
+        debug {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles 'proguard-rules.pro', getDefaultProguardFile('proguard-android-optimize.txt')
+        }
+
+    }
+
+    leakCanary {
+        // LeakCanary needs to know which variants have obfuscation turned on
+        filterObfuscatedVariants { variant ->
+            variant.name == "debug"
+        }
+    }
+
+
+    compileOptions {
+        //sourceCompatibility = 1.7
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.preference:preference:1.1.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation 'com.squareup.okhttp3:okhttp:3.12.13' // 14-04-2021 up from 3.8.0
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.13' // 14-04-2021 up from 3.8.0
+    implementation 'com.squareup.retrofit2:retrofit:2.6.4'
+    // 14-04-2021 up from 2.4.0 // следующая версия уже api21+
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.4' // 14-04-2021 up from 2.3.0
+    //implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.3.1' // 14-04-2021
+
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.room:room-runtime:2.2.3'
+    annotationProcessor 'androidx.room:room-compiler:2.2.3'
+    //implementation 'org.jetbrains:annotations-java5:15.0' // 14-04-2021
+    //debugImplementation 'im.dino:dbinspector:4.0.0'
+
+    implementation platform('com.google.firebase:firebase-bom:26.7.0')
+    //implementation 'com.google.firebase:firebase-analytics:17.2.2'
+    implementation 'com.google.firebase:firebase-analytics' // not depend from Google Play services
+    //implementation 'com.google.firebase:firebase-crashlytics:17.1.1'
+    implementation 'com.google.firebase:firebase-crashlytics'
+    // not depend from Google Play services
+    //implementation 'com.google.firebase:firebase-messaging:20.2.3'
+    implementation 'com.google.firebase:firebase-messaging' // depend from Google Play services
+    implementation 'com.google.firebase:firebase-auth' // not depend from Google Play services
+
+    implementation 'androidx.browser:browser:1.3.0'
+    // добавил для reCapcha (RestorePassActivity), отключил
+    // так как перестал строиться проект, нужно повышать версию java до 1.8
+    // https://stackoverflow.com/questions/49512629/default-interface-methods-are-only-supported-starting-with-android-n
+
+    implementation 'androidx.work:work-runtime:2.4.0'
+
+    def billing_version = "3.0.3"
+    implementation "com.android.billingclient:billing:$billing_version"
+    //implementation 'com.google.android.gms:play-services-auth:19.0.0' // disable 13-05-2021 использовался в RestorePass
+
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    //implementation "androidx.datastore:datastore:1.0.0-alpha08"
+    //implementation "androidx.datastore:datastore-preferences:1.0.0-alpha08"
+
+    //implementation "androidx.multidex:multidex:2.0.1"  // add 16-04-2021 (for problem - limit 64KB)
+
+    //debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7' // disable temporary
+
+
+}

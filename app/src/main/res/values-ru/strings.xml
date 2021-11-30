@@ -1,0 +1,479 @@
+<resources>
+    <string name="app_name">ProgressMonitor</string>
+    <string name="version_name">Версия приложения: %1$s</string>
+    <string name="network_status_online">Подключен к сети</string>
+    <string name="network_status_offline">Отключен от сети</string>
+
+
+    <!-- Promo -->
+
+    <string name="promo_request_too_large">Загружаемый файл слишком большой</string>
+
+
+    <!-- Project -->
+
+    <string name="project_title">Проекты</string>
+
+
+    <!-- GroupPolicies -->
+
+    <string name="save">Сохранить</string>
+
+
+    <!-- Post -->
+
+    <string name="structure_scheme">Структурная схема:</string>
+
+    <string name="post_spinner_change_employee">Выберите сотрудника</string>
+    <string name="post_checkbox_change_employees">Выберите сотрудников</string>
+    <string name="post_employee">Сотрудник</string>
+    <string name="post_superior">Руководитель</string>
+    <string name="post_name">Должность</string>
+    <string name="post_example_name">Наименование должности</string>
+    <string name="post_not_assigned">Не назначено</string>
+    <string name="post_current_assignment_table">Таблица текущих назначений</string>
+    <string name="post_appoint_post">Назначить должность</string>
+    <string name="post_cancel_appointment">Отменить назначение</string>
+    <string name="post_change_parent">Передать сотрудников другому руководителю</string>
+    <string name="post_to_appoint">Назначить</string>
+    <string name="post_appoint_chief_executive">Назначить главного руководителя</string>
+    <string name="post_select_chief_executive">Выберите главного руководителя</string>
+    <string name="post_example_senior_manager">Старший менеджер</string>
+    <string name="post_example_general_manager">Генеральный директор</string>
+    <string name="prompt_change_superior">Выберите руководителя</string>
+    <string name="prompt_change_new_superior">Выберите нового руководителя</string>
+    <string name="post_instruction_chief">Необходимо определить главного руководителя, который будет первым, верхним элементом структурной схемы организации:</string>
+    <string name="post_instruction_employee">Выбрав сотрудника из первого списка, введите наименование его должности, и выберите его непосредственного руководителя из второго списка сотрудников:</string>
+    <string name="post_instruction_change_parent">На время отпуска или по иной причине, можно назначить группе сотрудников другого руководителя. Для этого выберите действующего руководителя, в списке его подчиненных выберите перемещаемых сотрудников, и выберите для них нового руководителя</string>
+    <string name="post_instruction_deleting">Выбранный сотрудник перестает быть связан с непосредственным руководителем, а всем для кого он являлся непосредственным руководителем, при необходимости установить нового непосредственного руководителя, иначе они не будут видны на структурной схеме (так как будут привязаны к сотруднику не имеющему должности в схеме):</string>
+    <string name="post_not_yourself">Не себя</string>
+    <string name="post_actual_parent">Действующий руководитель:</string>
+    <string name="post_new_parent">Новый руководитель:</string>
+
+    <string name="immediate_superior">Непосредственный руководитель</string>
+
+
+
+
+    <!-- Planing -->
+
+    <string name="personal_plans">Персональные</string>
+    <string name="group_plans">Группа</string>
+    <string name="select_plan">Выберите план</string>
+    <string name="rejected">Отклонен</string>
+    <string name="not_accepted">Не установлен</string>
+    <string name="control_child_plan">Контролируемость планов подчиненных</string>
+    <string name="select_period_statistic_plan">Выберите период</string>
+    <string name="select_period_week">Неделя</string>
+    <string name="select_period_month">Месяц</string>
+    <string name="select_period_six_months">Полгода</string>
+
+    <string name="title_personal_stat">Персональная статистика</string>
+    <string name="index">Показатель</string>
+    <string name="value">Величина</string>
+    <string name="value_h_m">Ч : м</string>
+    <string name="units">Ед.из</string>
+    <string name="percent">%</string>
+    <string name="number_all_plan">Запланировано:\u0020</string>
+    <string name="number_completed_plan">Завершено:\u0020</string>
+    <string name="number_incomplete_plan">Не завершено:\u0020</string>
+    <string name="number_rejected_plan">Отклонено:\u0020</string>
+
+    <string name="title_subordinate_stat">Статистика подчиненных</string>
+    <string name="number_child_employees">Подчиненных:\u0020</string>
+    <string name="employees">(сотрудников: </string>
+    <string name="relative_indicators">Относительные показатели:</string>
+    <string name="planning_rate">Норма планирования:</string>
+    <string name="actual_planning">Фактическое планирование:</string>
+    <string name="actual_execution">Фактическое выполнение:</string>
+    <string name="hint_planning_rate">(Все запланированное время группы за период / Кол-во сотрудников)</string>
+    <string name="hint_actual_planning">(Запланировано / Норма планирования)</string>
+    <string name="hint_actual_execution">(Завершено / Норма планирования)</string>
+    <string name="hint_planning_rate_sub">(Норма планирования по группе * Кол-во подчиненных)</string>
+
+
+    <string name="notification_channel_id_foreground">foreground_notifications</string>
+    <string name="notification_channel_id_push">push_notifications</string>
+    <string name="default_notification_channel_id">push_notifications</string>
+    <string name="notification_channel_name_foreground">Служебные уведомления</string>
+    <string name="notification_channel_name_push">Входящие уведомления</string>
+    <string name="notification_channel_description_foreground">Уведомления статуса синхронизации, сети т.д.</string>
+    <string name="notification_channel_description_push">Уведомления о входящих задачах и иных событиях</string>
+
+
+    <!-- Titles Bar, any -->
+    <string name="tasks">Задачи</string>
+    <string name="plans">Планы</string>
+
+
+    <string name="incoming">Входящие</string>
+    <string name="outbox">Исходящие</string>
+    <string name="other">Общие</string>
+
+    <string name="sort_active">АКТИВНЫЕ</string>
+    <string name="sort_archive">АРХИВ</string>
+    <string name="sort_inactive">ВЫПОЛНЕННЫЕ</string>
+    <string name="sort_canceled">ОТМЕНЕННЫЕ</string>
+    <string name="sort_open">ОТКРЫТЫЕ</string>
+    <string name="sort_closed">ЗАВЕРШЕННЫЕ</string>
+
+
+    <!--AlertDialog -->
+    <string name="alert_dialog_button_positive">Да</string>
+    <string name="alert_dialog_button_negative">Нет</string>
+
+    <string name="alert_dialog_mess_success_non_details">"Успешно выполнено"</string>
+    <string name="alert_dialog_mess_success_add_user">"Пользователь успешно добавлен, пароль отправлен через смс"</string>
+    <string name="alert_dialog_mess_success_add_user_send_sms">"Пользователь добавлен. Логин: %1$s, пароль: %2$s. Отправить ему его пароль в смс?"</string>
+    <string name="alert_dialog_mess_success_rewrite_password_send_sms">"Пароль изменен. Логин: %1$s, новый пароль: %2$s. Отправить эти данные себе в смс?"</string>
+    <string name="alert_dialog_mess_success_create_group_password_send_sms">"Группа создана. Ваш логин администратора: %1$s, пароль: %2$s. Отправить эти данные себе в смс?"</string>
+    <string name="alert_dialog_mess_fail_create_group">Не удалось создать группу, попробуйте позже</string>
+    <string name="alert_dialog_mess_add_user_send_sms_content">"ProgressMonitor: логин: %1$s, пароль: %2$s"</string>
+    <string name="alert_dialog_mess_add_user_send_sms_not_available">"Отправка sms недоступна"</string>
+    <string name="alert_dialog_mess_success_delete_user">"Пользователь успешно удален"</string>
+    <string name="alert_dialog_mess_delete_task">Удалить задачу?</string>
+
+
+    <string name="alert_dialog_mess_reject_plan">Отклонить пункт плана?</string>
+    <string name="alert_dialog_mess_delete_plan">Удалить пункт плана?</string>
+
+    <string name="alert_dialog_mess_double_add_user">"Пользователь с таким номером уже существует"</string>
+    <string name="alert_dialog_mess_fail_phone_or_password">"Неверный номер или пароль"</string>
+    <string name="alert_dialog_mess_user_not_found">"Пользователя с таким номером не существует"</string>
+    <string name="alert_dialog_mess_fail_cut">Что-то не так, повторите позже, или сообщите администратору</string>
+    <string name="alert_dialog_mess_fail_full">Что-то не так, проверьте интернет, повторите позже, или сообщите администратору</string>
+    <string name="alert_dialog_mess_connect_fail">Похоже проблемы с подключением, проверьте интернет, повторите позже, или сообщите администратору</string>
+    <string name="billing_success">Оплата прошла успешно, получен полный доступ к группе</string>
+    <string name="billing_fail">Проблемы с платежным сервисом, повторите позже</string>
+    <string name="billing_user_canceled">Вы отказались от оплаты</string>
+    <string name="billing_fail_refund">Проблемы с платежным сервисом, повторите позже, если проблема не решится, то оплата автоматически будет возвращена в течении 3 дней</string>
+
+    <string name="success_synchronized">Синхронизировано: </string>
+    <string name="fail_synchronized">Сбой синхронизации: </string>
+    <string name="new_task_notification">Появилась новая задача</string>
+
+    <string name="alert_dialog_mess_delete_user">Удаление пользователя приведет к удалению созданных им задач, продолжить?</string>
+    <string name="alert_dialog_mess_you_deleted">Вы были исключены из группы</string>
+    <string name="alert_dialog_mess_group_blocked">Истек пробный период</string>
+    <string name="alert_dialog_mess_group_not_found">Группа не найдена</string>
+    <string name="alert_dialog_mess_set_another_admin">Ваши права администратора перейдут выбранному пользователю, продолжить?</string>
+
+    <!--Example: Hint + binding <string name="task_title">Имя задачи: %s</string>  -->
+
+    <string name="hint_task_from">Создатель:</string>
+    <string name="hint_task_for">Получатель:</string>
+    <string name="hint_task_desc">Описание задачи:</string>
+    <string name="hint_task_status">Статус задачи:</string>
+    <string name="hint_task_time_limit">Срок выполнения:</string>
+    <string name="hint_task_created">Задача создана:</string>
+    <string name="hint_task_updated">Задача изменена:</string>
+    <string name="hint_task_recycler_view">Список задач</string>
+    <string name="hint_question_recycler_view">Список вопросов</string>
+    <string name="example_phone_number">Пример: +7XXXXXXXXXX</string>
+
+
+    <string name="status_task_active">Активная</string>
+    <string name="status_task_inactive">Выполнена</string>
+    <string name="status_task_canceled">Отменена</string>
+
+    <string name="task_title_default">Заголовок</string>
+    <string name="task_desc">%s</string>
+    <string name="task_from">%s</string>
+    <string name="for_fio">Для кого: %s</string>
+    <string name="from_fio">От кого: %s</string>
+    <string name="hint_done_task">Сделать задачу выполненой:</string>
+    <string name="hint_deactivate_task">Временно отменить задачу:</string>
+    <string name="hint_activate_task">Сделать задачу активной:</string>
+    <string name="hint_delete_task">Удалить задачу:</string>
+    <string name="hint_create_task">Создать задачу</string>
+    <string name="hint_create_question">Создать вопрос</string>
+    <string name="delete">Удалить</string>
+    <string name="task_status">%s</string>
+    <string name="task_time_limit">%s</string>
+    <string name="task_createdAt">%s</string>
+    <string name="task_updatedAt">%s</string>
+    <string name="help">Справка</string>
+    <string name="activate">Активировать</string>
+    <string name="deactivate">Отменить</string>
+    <string name="done">Выполнено</string>
+
+    <string name="menu_refresh">Обновить данные</string>
+    <string name="menu_user_control">Управление группой</string>
+    <string name="menu_logout">Выйти</string>
+
+
+
+
+    <string name="hint_tvDate">Выберите дату</string>
+    <string name="hint_tvDurationPlan">Выберите продолжительность работы</string>
+    <string name="hint_advertising"> </string>
+
+    <string name="from_me">Я</string>
+    <string name="for_me">Я</string>
+
+    <string name="title_login_screen">Войти в группу</string>
+    <string name="title_new_group_screen">Создать группу</string>
+    <string name="title_help_screen">Помощь по приложению</string>
+    <string name="title_user_control_screen">Управление группой</string>
+    <string name="title_settings_screen">Настройки</string>
+    <string name="confirm_logout">Выйти из группы?</string>
+    <string name="title_voting_screen">Голосование</string>
+    <string name="title_structural_scheme">Структурная схема</string>
+
+
+    <!--LoginActivity -->
+    <string name="enter_pass">Введите пароль</string>
+    <string name="restore_pass_hint"><u>Восстановить пароль</u></string>
+    <string name="restore_pass_hint_firebase"><u>По номеру телефона</u></string>
+    <string name="restore_pass_hint_email"><u>По е-маил</u></string>
+    <string name="create_group_hint"><u>Создать новую группу</u></string>
+
+
+    <!--UserCreationActivity -->
+
+
+
+    <!--UserControlActivity -->
+    <string name="add_new_user">Добавить нового пользователя</string>
+    <string name="add_new_user_btn">Добавить пользователя</string>
+    <string name="delete_user">Удалить пользователя из группы</string>
+    <string name="delete_user_hint">Выберите удаляемого пользователя</string>
+    <string name="delete_user_btn">Удалить пользователя</string>
+    <string name="transfer_administrator_rights"><u>Передать права администратора</u></string>
+    <string name="delete_group"><u>Удалить группу</u></string>
+    <string name="message_delete_group">Для удаления группы, свяжитесь с нами: \n <b>com.astudio.office@gmail.com</b></string>
+    <string name="transfer_administrator_btn">Сделать администратором</string>
+    <string name="hint_another_admin">Выберите нового администратора</string>
+
+
+    <!--NewTaskActivity -->
+    <string name="task_recipient">Получатель задачи:</string>
+    <string name="change_recipient">Выберите исполнителя:</string>
+    <string name="change_task_limit">Введите срок выполнения:</string>
+    <string name="enter_task_desc">Введите описание задачи:</string>
+    <string name="task_desc_hint">Описание задачи:</string>
+
+
+    <!--NewGroupActivity -->
+    <string name="name_company">Группа:</string>
+    <string name="name_company_length">Не более 20 символов</string>
+    <string name="name_admin">Введите ФИО</string>
+    <string name="name_admin_hint">Пример: Иванов А.С.</string>
+
+
+    <!--StatisticActivity -->
+    <string name="statistic_title">Статистика</string>
+    <string name="number_users">Участников в группе</string>
+    <string name="group_admin_name">Администратор</string>
+    <string name="active_tasks_group">Активных задач в группе</string>
+    <string name="active_tasks_for_me">Активных задач мне</string>
+    <string name="active_tasks_from_me">Активных задач от меня</string>
+    <string name="unfulfilled_tasks">Активные</string>
+    <string name="canceled_tasks">Отмененные</string>
+    <string name="completed_tasks">Выполненные</string>
+    <string name="cumulative_tasks">Нарастающий итог активных задач</string>
+    <string name="january">Янв</string>
+    <string name="february">Фев</string>
+    <string name="march">Мар</string>
+    <string name="april">Апр</string>
+    <string name="may">Май</string>
+    <string name="june">Июн</string>
+    <string name="july">Июл</string>
+    <string name="august">Авг</string>
+    <string name="september">Сен</string>
+    <string name="october">Окт</string>
+    <string name="november">Ноя</string>
+    <string name="december">Дек</string>
+
+
+    <!--RatingActivity -->
+    <string name="rating_title">Рейтинг</string>
+    <string name="top5">Топ-5:</string>
+    <string name="pie_label_up">Рост уровня</string>
+    <string name="pie_label_balance">Осталось до нового уровня</string>
+
+
+    <!--VotingActivity -->
+    <string name="voting_title">Голосование</string>
+
+    <!--NewQuestionActivity -->
+    <string name="change_question_limit">Выберите срок голосования (дней):</string>
+    <string name="enter_question_desc">Введите описание вопроса:</string>
+    <string name="question_desc_hint">Описание вопроса:</string>
+    <string name="new_question_title">Создать вопрос</string>
+
+    <!-- QuestionDescActivity -->
+    <string name="hint_end_voting">Конец:</string>
+    <string name="hint_create_voting">Начало:</string>
+
+
+
+    <!--RestorePassActivity -->
+    <string name="restore_pass_title">Восстановление пароля</string>
+    <string name="restore_pass_quota">Слишком много запросов, повторите позже</string>
+    <string name="restore_pass_invalid_format_phone">Неверный формат номера</string>
+    <string name="restore_pass_invalid_format_code">Неверный формат смс-кода</string>
+    <string name="restore_pass_invalid_code">Неверный смс-код</string>
+    <string name="restore_pass_phone_num_hint">Введите номер телефона</string>
+    <string name="restore_pass_sms_code_hint">Введите код из смс</string>
+    <string name="restore_pass_step1">1 шаг</string>
+    <string name="restore_pass_step2">2 шаг</string>
+    <string name="send_phone">Отправить номер</string>
+    <string name="send_code">Отправить код</string>
+    <string name="sms_should_minute">Смс должно придти в течении минуты, если не пришло:</string>
+    <string name="get_code_again"><u>Запросить смс - код повторно</u></string>
+
+
+    <!--RestorePassEmailActivity -->
+    <string name="restore_pass_invalid_format_email">Неверный формат е-маил</string>
+    <string name="restore_pass_invalid_restore_code">Неверный код</string>
+    <string name="restore_pass_email_hint">Введите е-маил</string>
+    <string name="example_email">Пример: ivanov@mail.ru</string>
+    <string name="send_code_email">Отправить на е-маил код</string>
+    <string name="restore_pass_email_code_hint">Введите код из письма</string>
+
+
+    <string name="cont_desc_toolbar">Сделать выполненой</string>
+    <string name="cont_desc_btn_back">Вернуться назад</string>
+
+
+    <string name="create_task_btn">Создать</string>
+
+
+    <string name="create_group_btn">Создать группу</string>
+
+
+    <string name="empty_text_error_message">Поле не может быть пустым</string>
+    <string name="max_length_text_error_message">Имя должно быть не более</string>
+    <string name="max_length_long_text_error_message">Должно быть не более</string>
+    <string name="symbol"> символов</string>
+    <string name="invalid_date">Некорректная дата</string>
+    <string name="invalid_duration">Определите продолжительность</string>
+
+    <string name="prompt_change_user">Выберите пользователя</string>
+
+
+    <!--Settings -->
+    <string name="preference_group_general">Общие настройки</string>
+    <string name="foreground_mode">Автосинхронизация</string>
+    <string name="preference_group_logout">Выход из группы</string>
+
+
+    <!--HelpActivity -->
+    <string name="help_tab_host"><b>Список задач:</b> \nЗадачи делятся на три вида:
+        \n<i>ВХОДЯЩИЕ</i> - задачи созданные другим участником группы для нас,
+        \n<i>ИСХОДЯЩИЕ</i> - задачи созданные нами, для другого участника группы,
+        \n<i>ОБЩИЕ</i> - задачи созданные другими участниками группы, и не для нас.
+        \n\nКаждая задача может иметь три состояния:
+        \n<i>АКТИВНАЯ</i> - не выполненная и не отмененная задача,
+        \n<i>ВЫПОЛНЕННАЯ</i> - выполненная задача,
+        \n<i>ОТМЕНЕННАЯ</i> - не выполненная, временно отмененная задача.
+        \nВ каждом списке задач, есть возможность сделать выборку по состоянию задач, с помощью выпадающего меню над списком задач.
+        \n\nДля просмотра подробного описания задачи следует коснуться выбранной строки задачи в списке задач. Для возвращения к списку
+        задач - выбрать значек <u>Назад</u> в виде стрелки, в верхней части приложения.
+        \n\n<b>Создание новой задачи:</b>
+        \nДля создания новой задачи, следует нажать на плавающую кнопку в нижнем правом углу списка задач.
+        \n\n<b>Обновление списка:</b>
+        \nСписок задач автоматически синхронизируется со всей группой каждые 15 минут, при условии что приложение активно.
+        Статус последнего обновления отображается в уведомлении в строке уведомлений телефона. Также, список будет автоматически синхронизирован
+        в случае появления новой задачи в группе. Для ручного обновления следует на экране любого списка задач, касанием потянуть список вниз,
+        до появления индикатора загрузки. Либо в меню приложения, выбрать пункт <u>Обновить данные</u>.
+        \n<i>В зависимости от мобильного устройства</i>, работа приложения в фоновом режиме может ограничиваться операционной системой,
+        для того чтобы данные были гарантированно актуальны - в настройках приложения разрешите \"Автозапуск\" или
+        аналогичным образом снимите ограничения на работу в фоновом режиме.
+    </string>
+
+    <string name="help_task_description"><b>Просмотр и управление задачей:</b>
+        \n - задачами, созданными нами, можно управлять - менять статус, удалять. Для перевода задачи в статус \"<i>выполненной</i>\"
+        или \"<i>отмененной</i>\" нажать на соответствующий значек в описании задачи или в меню приложения. Отменненную задачу можно
+        вернуть в статус активной. Выполненную или отмененную задачу можно удалить, удаление этой задачи будет произведено для всей группы.
+        \nЗадачи созданные не нами - доступны только для просмотра.
+    </string>
+
+    <string name="help_new_task"><b>Создание задачи:</b>
+        \n - в выпадающем списке выбрать участника группы, для которого создается задача, нажатием на строку даты - выбрать желаемый срок
+        выполнения задачи, в поле описания задачи ввести описание задачи. После заполнения всех полей нажать на значек подтверждения
+        в виде галочки, в верхней части приложения.
+        \n\nДля возврата на предыдущий экран без создания задачи - выбрать значек <u>Назад</u> в виде стрелки, в верхней части приложения.
+    </string>
+
+    <string name="help_statistic"><b>Статистика группы:</b>
+        \n Сумма созданных задач за период (месяц), складывается из выполненных, отмененных, активных (невыполненных).
+    </string>
+
+    <string name="help_user_control"><b>Добавление пользователя:</b>
+        \n - введите его ФИО в формате: <u>Фамилия.И.О.</u>, номер его телефона, в формате: <u>+7ХХХХХХХХХ</u>, подтвердите ввод.
+        \nВ случае успешного добавления, появится всплывающее сообщение, содержащее логин и пароль созданного пользователя, передайте их ему,
+        либо подтвердите отправку в sms, нажав кнопку \"<u>Да</u>\". После чего можно вернуться к добавлению следующего пользователя.
+        \n\n<b>Удаление пользователя:</b>
+        \n - для удаления пользователя из группы, выбрать в выпадающем списке удаляемого пользователя, подтвердить действие. При удалении
+        пользователя, также удаляются созданные им задачи.
+        \n\n<b>Смена администратора:</b>
+        \n - в каждой группе есть единственный администратор, имеющий возможность управлять группой (добавлять, удалять пользователей в группе).
+        Для смены администратора, действующему администратору необходимо: в разделе \"<u>Управление группой</u>\" активировать
+        ссылку \"<u>Передать права администратора</u>\", в появившемся списке пользователей выбрать пользователя назначенного новым
+        администратором, подтвердить действие. После чего выбрать в меню приложения \"<u>Обновить данные</u>\" у нового администратора.
+    </string>
+
+    <string name="help_login"><b>Вход в группу:</b>
+        \n - ввести в соответствующее поле номер телефона, в формате: <u>+7ХХХХХХХХХ</u>;
+        \n - ввести в соответствующее поле пароль, ранее полученный от администратора группы;
+        \n - нажать кнопку \"<u>Войти</u>\".
+        \n\n<b>Восстановление пароля:</b>
+        \n - в случае, если бы были участником группы, но пароль утерян, то по ссылке \"<u>Восстановить пароль</u>\", перейдите
+        на экран восстановления пароля.
+        \n\n<b>Создание новой группы:</b>
+        \n - для создания новой группы, по ссылке \"<u>Создать новую группу</u>\", перейдите на соотвествующий экран.
+        \n\n<b>Помошь по приложению</b> присутствует в каждом разделе и доступна через меню в верхней части приложения.
+    </string>
+
+    <string name="help_new_group"><b>Создание группы:</b>
+        \n - заполнить поле \"<i>Наименование организации</i>\", до 20 символов, ввести ФИО администратора группы,
+        в формате: <u>Фамилия.И.О.</u>, номер его телефона, в формате: <u>+7ХХХХХХХХХ</u>, подтвердить ввод, сохранить логин
+        (номер телефона) и пароль для дальнейшего входа в группу.
+        \n\nДля возврата на предыдущий экран без создания группы - выбрать значек <u>Назад</u> в виде стрелки, в верхней части приложения.
+    </string>
+
+    <string name="help_restore_pass"><b>Восстановление пароля:</b>
+        \n - ввести в соответствующее поле номер телефона, в формате: <u>+7ХХХХХХХХХ</u>, подтвердить ввод;
+        \n - дождаться sms сообщения с кодом подтверждения (в течении минуты), ввести код в соотвествующее поле, подтвердить ввод;
+        \n - в случае успеха будет сгенерирован новый пароль, необходимый для входа в группу, сохранить его;
+        \n - если sms с кодом не пришло, нажать на ссылку \"<i>Запросить смс-код повторно</i>\", и повторить действия начиная с первого.
+        \n\nДля возврата на предыдущий экран - выбрать значек <u>Назад</u> в виде стрелки, в верхней части приложения.
+    </string>
+
+    <string name="help_rating">
+        <b>Рейтинг пользователя: </b>
+        \n Рейтинг пользователя рассчитывается исходя из его активности.
+        \n Создание задачи, принятие выполненной задачи - увеличивает рейтинг. Выполнение задач, поставленных другими пользователями - еще более увеличивает рейтинг. Отмена созданных ранее задач - уменьшает рейтинг. Уровень пользователя увеличивается при достижении рейтинга до необходимого значения.
+        \n Работа с задачами для себя - не влияет на рейтинг.
+    </string>
+
+    <string name="help_default">
+        <b>Помошь по приложению</b> присутствует в каждом разделе и доступна через меню в верхней части приложения.
+    </string>
+
+
+    <!-- А этот код мы используем для проверки того, как выглядит реальное склонение -->
+    <plurals name="plurals">
+        <item quantity="zero">нет котов</item>
+        <item quantity="one">%1$d кот</item>
+        <item quantity="two">%1$d кота</item>
+        <item quantity="few">%1$d кота</item>
+        <item quantity="many">%1$d котов</item>
+        <item quantity="other">%1$d котов</item>
+    </plurals>
+
+
+
+
+
+
+</resources>
+
+
+    <!--
+<string name="title_task">Id задачи: %1$s, имя задачи %2$s</string>
+android:text="@{@string/task_title(task.id, task.title)}">
+ https://developer.android.com/topic/libraries/data-binding/expressions#resources
+-->

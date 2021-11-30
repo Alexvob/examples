@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <!--
+        <item
+            android:id="@+id/menu_home"
+            android:title="home"
+            android:icon="@drawable/home_page"
+            android:orderInCategory="10"
+            app:showAsAction="always">
+        </item>
+    -->
+    <group android:id="@+id/group_extended_desc_plan">
+
+
+<!--
+        <item
+            android:id="@+id/menu_edit_plan"
+            android:title="Edit"
+            android:icon="@drawable/list"
+            android:orderInCategory="10"
+            app:showAsAction="never">
+        </item>
+-->
+
+        <item
+            android:id="@+id/menu_delete_plan"
+            android:title="@string/delete"
+            android:icon="@drawable/delete_task_dark"
+            android:orderInCategory="11"
+            app:showAsAction="never">
+        </item>
+
+
+        <item
+            android:id="@+id/menu_help"
+            android:title="@string/help"
+            android:orderInCategory="20"
+            app:showAsAction="never">
+        </item>
+
+    </group>
+
+<!--
+    <item android:id="@+id/action_search"
+        android:title="@string/action_search"
+        android:icon="@drawable/ic_search"
+        android:orderInCategory="10"
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+-->
+
+
+
+</menu>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <androidx.cardview.widget.CardView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:contentPadding="3dp"
+        card_view:cardCornerRadius="3dp"
+        app:cardElevation="3dp"
+        app:cardMaxElevation="2dp"
+        app:cardBackgroundColor="@color/colorTaskListCard"
+        >
+
+
+
+    <LinearLayout
+        android:id="@+id/row_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="2dp"
+        android:paddingBottom="1dp"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:layout_marginBottom="7dp">
+
+        <TextView
+            android:id="@+id/desc_plan"
+            android:layout_width="0dp"
+            android:layout_weight="0.65"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearance"
+            android:textSize="17sp"
+            android:maxLines="2" />
+
+
+        <TextView
+            android:id="@+id/duration_item_plan"
+            android:layout_width="0dp"
+            android:layout_weight="0.35"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:maxLines="1"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="13sp" />
+
+
+    </LinearLayout>
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/status_plan_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:theme="@style/ProgressIndicatorPlan"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"/>
+
+<!--
+    <TextView
+        android:id="@+id/task_title_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="16sp"
+        android:maxLines="1"
+        android:text="@string/task_title_default"
+        android:layout_marginTop="25dp"
+        android:paddingTop="1dp"
+        android:paddingBottom="2dp"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"/>
+-->
+    </androidx.cardview.widget.CardView>
+
+
+
+</LinearLayout>
+
+<!--
+    <TableLayout
+        android:stretchColumns="*"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        tools:ignore="UselessParent">
+        <TableRow
+            android:id="@+id/row_task"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp">
+            <TextView
+                android:id="@+id/task_for"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.34"
+                android:gravity="start"
+                android:text="@string/for_fio"
+                android:textAppearance="?android:attr/textAppearance"
+                android:textSize="16sp"
+                android:maxLines="1"/>
+            <TextView
+                android:id="@+id/task_title_out"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.66"
+                android:gravity="start"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="16sp"
+                android:maxLines="1"
+                android:text="@string/task_title_default" />
+        </TableRow>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.8dp"
+        android:id="@+id/separator"
+        android:visibility="visible"
+        android:background="@android:color/darker_gray"/>
+    </TableLayout>
+-->
+
+    <!--
+        android:layout_width="0dp"
+        android:layout_weight="0.34"
+    -->

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".group.NewGroupActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="top"
+        tools:layout_editor_absoluteY="59dp"
+        tools:layout_editor_absoluteX="50dp">
+
+
+        <include
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginStart="5dp">
+
+
+        <EditText android:id="@+id/create_group_name"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:cursorVisible="true"
+            android:hint="@string/name_company"
+            android:inputType="textCapSentences|text"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="5dp"
+            android:text="@string/name_company_length"/>
+
+
+        <EditText
+            android:id="@+id/fio_main_admin"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:cursorVisible="true"
+            android:hint="@string/name_admin"
+            android:inputType="textCapSentences|text"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="5dp"
+            android:text="@string/name_admin_hint"/>
+
+
+        <EditText android:id="@+id/create_phone_main_admin"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal"
+            android:cursorVisible="true"
+            android:layout_marginTop="25dp"
+            android:hint="@string/restore_pass_phone_num_hint"
+            android:inputType="phone"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="5dp"
+            android:text="@string/example_phone_number"/>
+
+
+        <Button
+            android:id="@+id/create_group_admin_btn"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:onClick="createGroupAdmin"
+            android:text="@string/create_group_btn" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

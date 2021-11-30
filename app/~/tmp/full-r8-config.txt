@@ -1,0 +1,905 @@
+# Add project specific ProGuard rules here.
+# You can control the set of applied configuration files using the
+# proguardFiles setting in build.gradle.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
+
+# Uncomment this to preserve the line number information for
+# debugging stack traces.
+#-keepattributes SourceFile,LineNumberTable
+
+# If you keep the line number information, uncomment this to
+# hide the original source file name.
+#-renamesourcefileattribute SourceFile
+
+# add 08-02-2021 (retrofit 2 not work release version, cutting GET-parameters)
+-dontnote okhttp3.**, okio.**, retrofit2.**
+-dontwarn retrofit2.**
+-keep class retrofit2.** { *; }
+
+
+# Retrofit does reflection on generic parameters. InnerClasses is required to use Signature and
+# EnclosingMethod is required to use InnerClasses.
+-keepattributes Signature, InnerClasses, EnclosingMethod
+
+# Retrofit does reflection on method and parameter annotations.
+-keepattributes RuntimeVisibleAnnotations, RuntimeVisibleParameterAnnotations
+
+# Retain service method parameters when optimizing.
+-keepclassmembers,allowshrinking,allowobfuscation interface * {
+    @retrofit2.http.* <methods>;
+}
+
+# Ignore annotation used for build tooling.
+-dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+
+# Ignore JSR 305 annotations for embedding nullability information.
+-dontwarn javax.annotation.**
+
+# Guarded by a NoClassDefFoundError try/catch and only used when on the classpath.
+-dontwarn kotlin.Unit
+
+# Top-level functions that can only be used by Kotlin.
+-dontwarn retrofit2.KotlinExtensions
+-dontwarn retrofit2.KotlinExtensions$*
+
+# With R8 full mode, it sees no subtypes of Retrofit interfaces since they are created with a Proxy
+# and replaces all potential values with null. Explicitly keeping the interfaces prevents this.
+-if interface * { @retrofit2.http.* <methods>; }
+-keep,allowobfuscation interface <1>
+
+
+
+# my edit 08-02-2021 11-30
+-dontwarn androidx.annotation.**
+
+-keepclassmembers, allowobfuscation class * {
+  @ com.google.gson.annotations.SerializedName <fields>;
+}
+
+
+
+# my edit 08-02-2021 13-15
+
+# A resource is loaded with a relative path so the package of this class must be preserved.
+-keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
+
+# Animal Sniffer compileOnly dependency to ensure APIs are compatible with older versions of Java.
+-dontwarn org.codehaus.mojo.animal_sniffer.*
+
+# OkHttp platform used only on JVM and when Conscrypt dependency is available.
+-dontwarn okhttp3.internal.platform.ConscryptPlatform
+-dontwarn org.conscrypt.ConscryptHostnameVerifier
+
+
+# my edit 08-02-2021 13-15
+
+#-addconfigurationdebugging
+#-dontobfuscate
+
+-keep class com.google.gson.stream.** { *; }
+
+#crashlytics
+-keepattributes SourceFile,LineNumberTable
+-keep public class * extends java.lang.Exception
+
+# my edit 08-02-2021 15-20
+#-keep class com.test.apppackagename.retrofit.dto** {
+#    *;
+#}
+
+# save config-info
+-printconfiguration ~/tmp/full-r8-config.txt
+
+
+# add 09-02-2021
+-keepclassmembers public class * extends android.view.View {
+    void set*(***);
+    *** get*();
+}
+
+-keepclassmembers class * extends android.app.Activity {
+    public void *(android.view.View);
+}
+
+-keepclassmembers class * implements android.os.Parcelable {
+    public static final ** CREATOR;
+}
+# This is a configuration file for ProGuard.
+# http://proguard.sourceforge.net/index.html#manual/usage.html
+#
+# Starting with version 2.2 of the Android plugin for Gradle, this file is distributed together with
+# the plugin and unpacked at build-time. The files in $ANDROID_HOME are no longer maintained and
+# will be ignored by new version of the Android plugin for Gradle.
+
+# Optimizations: If you don't want to optimize, use the proguard-android.txt configuration file
+# instead of this one, which turns off the optimization flags.
+# Adding optimization introduces certain risks, since for example not all optimizations performed by
+# ProGuard works on all versions of Dalvik.  The following flags turn off various optimizations
+# known to have issues, but the list may not be complete or up to date. (The "arithmetic"
+# optimization can be used if you are only targeting Android 2.0 or later.)  Make sure you test
+# thoroughly if you go this route.
+-optimizations !code/simplification/arithmetic,!code/simplification/cast,!field/*,!class/merging/*
+-optimizationpasses 5
+-allowaccessmodification
+
+-dontusemixedcaseclassnames
+-dontskipnonpubliclibraryclasses
+-verbose
+
+# Preserve some attributes that may be required for reflection.
+-keepattributes *Annotation*,Signature,InnerClasses,EnclosingMethod
+
+-keep public class com.google.vending.licensing.ILicensingService
+-keep public class com.android.vending.licensing.ILicensingService
+-keep public class com.google.android.vending.licensing.ILicensingService
+-dontnote com.android.vending.licensing.ILicensingService
+-dontnote com.google.vending.licensing.ILicensingService
+-dontnote com.google.android.vending.licensing.ILicensingService
+
+# For native methods, see http://proguard.sourceforge.net/manual/examples.html#native
+-keepclasseswithmembernames class * {
+    native <methods>;
+}
+
+# Keep setters in Views so that animations can still work.
+-keepclassmembers public class * extends android.view.View {
+    void set*(***);
+    *** get*();
+}
+
+# We want to keep methods in Activity that could be used in the XML attribute onClick.
+-keepclassmembers class * extends android.app.Activity {
+    public void *(android.view.View);
+}
+
+# For enumeration classes, see http://proguard.sourceforge.net/manual/examples.html#enumerations
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
+-keepclassmembers class * implements android.os.Parcelable {
+    public static final ** CREATOR;
+}
+
+-keepclassmembers class **.R$* {
+    public static <fields>;
+}
+
+# Preserve annotated Javascript interface methods.
+-keepclassmembers class * {
+    @android.webkit.JavascriptInterface <methods>;
+}
+
+# The support libraries contains references to newer platform versions.
+# Don't warn about those in case this app is linking against an older
+# platform version. We know about them, and they are safe.
+-dontnote android.support.**
+-dontnote androidx.**
+-dontwarn android.support.**
+-dontwarn androidx.**
+
+# This class is deprecated, but remains for backward compatibility.
+-dontwarn android.util.FloatMath
+
+# Understand the @Keep support annotation.
+-keep class android.support.annotation.Keep
+-keep class androidx.annotation.Keep
+
+-keep @android.support.annotation.Keep class * {*;}
+-keep @androidx.annotation.Keep class * {*;}
+
+-keepclasseswithmembers class * {
+    @android.support.annotation.Keep <methods>;
+}
+
+-keepclasseswithmembers class * {
+    @androidx.annotation.Keep <methods>;
+}
+
+-keepclasseswithmembers class * {
+    @android.support.annotation.Keep <fields>;
+}
+
+-keepclasseswithmembers class * {
+    @androidx.annotation.Keep <fields>;
+}
+
+-keepclasseswithmembers class * {
+    @android.support.annotation.Keep <init>(...);
+}
+
+-keepclasseswithmembers class * {
+    @androidx.annotation.Keep <init>(...);
+}
+
+# These classes are duplicated between android.jar and org.apache.http.legacy.jar.
+-dontnote org.apache.http.**
+-dontnote android.net.http.**
+
+# These classes are duplicated between android.jar and core-lambda-stubs.jar.
+-dontnote java.lang.invoke.**
+
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:24
+-keep class androidx.core.app.CoreComponentFactory { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:217
+-keep class androidx.room.MultiInstanceInvalidationService { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:118
+-keep class androidx.work.impl.WorkManagerInitializer { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:147
+-keep class androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:157
+-keep class androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:177
+-keep class androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:167
+-keep class androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:197
+-keep class androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:186
+-keep class androidx.work.impl.background.systemalarm.RescheduleReceiver { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:125
+-keep class androidx.work.impl.background.systemalarm.SystemAlarmService { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:130
+-keep class androidx.work.impl.background.systemjob.SystemJobService { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:206
+-keep class androidx.work.impl.diagnostics.DiagnosticsReceiver { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:136
+-keep class androidx.work.impl.foreground.SystemForegroundService { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:142
+-keep class androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:319
+-keep class com.android.billingclient.api.ProxyBillingActivity { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:112
+-keep class com.astudio.progressmonitor.group.HelpActivity { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:94
+-keep class com.astudio.progressmonitor.group.LoginActivity { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:108
+-keep class com.astudio.progressmonitor.group.NavigationActivity { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:113
+-keep class com.astudio.progressmonitor.group.NewGroupActivity { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:90
+-keep class com.astudio.progressmonitor.group.RestorePassActivity { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:81
+-keep class com.astudio.progressmonitor.group.StartActivity { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:24
+-keep class com.astudio.progressmonitor.modules.App { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:53
+-keep class com.astudio.progressmonitor.modules.BootCompletedReceiver { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:63
+-keep class com.astudio.progressmonitor.modules.MyFirebaseMessagingService { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:45
+-keep class com.astudio.progressmonitor.modules.NetworkStateReceiver { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:70
+-keep class com.astudio.progressmonitor.modules.Notificator { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:109
+-keep class com.astudio.progressmonitor.task.TabHostActivity { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:103
+-keep class com.astudio.progressmonitor.task.description.TaskDescriptionActivity { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:104
+-keep class com.astudio.progressmonitor.task.newtask.NewTaskActivity { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:102
+-keep class com.astudio.progressmonitor.temp.employee.EmployeeListActivity { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:98
+-keep class com.astudio.progressmonitor.user.UserControlActivity { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:380
+-keep class com.google.android.datatransport.runtime.backends.TransportBackendDiscovery { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:393
+-keep class com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:387
+-keep class com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:333
+-keep class com.google.android.gms.auth.api.signin.RevocationBoundService { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:324
+-keep class com.google.android.gms.auth.api.signin.internal.SignInHubActivity { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:348
+-keep class com.google.android.gms.common.api.GoogleApiActivity { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:370
+-keep class com.google.android.gms.measurement.AppMeasurementJobService { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:360
+-keep class com.google.android.gms.measurement.AppMeasurementReceiver { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:366
+-keep class com.google.android.gms.measurement.AppMeasurementService { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:304
+-keep class com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:260
+-keep class com.google.firebase.auth.internal.FederatedSignInActivity { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:267
+-keep class com.google.firebase.auth.internal.GenericIdpActivity { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:285
+-keep class com.google.firebase.auth.internal.RecaptchaActivity { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:221
+-keep class com.google.firebase.components.ComponentDiscoveryService { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:339
+-keep class com.google.firebase.iid.FirebaseInstanceIdReceiver { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:251
+-keep class com.google.firebase.messaging.FirebaseMessagingService { <init>(); }
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:353
+-keep class com.google.firebase.provider.FirebaseInitProvider { <init>(); }
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\ddf08c87330e176b87ac0eba50d1040a\appcompat-1.1.0\res\layout\abc_alert_dialog_title_material.xml:57
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\ddf08c87330e176b87ac0eba50d1040a\appcompat-1.1.0\res\layout\abc_alert_dialog_material.xml:52
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\ddf08c87330e176b87ac0eba50d1040a\appcompat-1.1.0\res\layout\abc_alert_dialog_button_bar_material.xml:43
+-keep class android.widget.Space { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\ddf08c87330e176b87ac0eba50d1040a\appcompat-1.1.0\res\layout\abc_select_dialog_material.xml:23
+-keep class androidx.appcompat.app.AlertController$RecycleListView { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\ddf08c87330e176b87ac0eba50d1040a\appcompat-1.1.0\res\layout\abc_action_menu_item_layout.xml:17
+-keep class androidx.appcompat.view.menu.ActionMenuItemView { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\ddf08c87330e176b87ac0eba50d1040a\appcompat-1.1.0\res\layout\abc_expanded_menu_layout.xml:17
+-keep class androidx.appcompat.view.menu.ExpandedMenuView { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\ddf08c87330e176b87ac0eba50d1040a\appcompat-1.1.0\res\layout\abc_popup_menu_item_layout.xml:17
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\ddf08c87330e176b87ac0eba50d1040a\appcompat-1.1.0\res\layout\abc_list_menu_item_layout.xml:17
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\ddf08c87330e176b87ac0eba50d1040a\appcompat-1.1.0\res\layout\abc_cascading_menu_item_layout.xml:20
+-keep class androidx.appcompat.view.menu.ListMenuItemView { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\ddf08c87330e176b87ac0eba50d1040a\appcompat-1.1.0\res\layout\abc_screen_toolbar.xml:27
+-keep class androidx.appcompat.widget.ActionBarContainer { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\ddf08c87330e176b87ac0eba50d1040a\appcompat-1.1.0\res\layout\abc_screen_toolbar.xml:43
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\ddf08c87330e176b87ac0eba50d1040a\appcompat-1.1.0\res\layout\abc_action_mode_bar.xml:19
+-keep class androidx.appcompat.widget.ActionBarContextView { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\ddf08c87330e176b87ac0eba50d1040a\appcompat-1.1.0\res\layout\abc_screen_toolbar.xml:17
+-keep class androidx.appcompat.widget.ActionBarOverlayLayout { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\ddf08c87330e176b87ac0eba50d1040a\appcompat-1.1.0\res\layout\abc_action_menu_layout.xml:17
+-keep class androidx.appcompat.widget.ActionMenuView { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\ddf08c87330e176b87ac0eba50d1040a\appcompat-1.1.0\res\layout\abc_activity_chooser_view.xml:19
+-keep class androidx.appcompat.widget.ActivityChooserView$InnerLayout { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\ddf08c87330e176b87ac0eba50d1040a\appcompat-1.1.0\res\layout\abc_alert_dialog_material.xml:18
+-keep class androidx.appcompat.widget.AlertDialogLayout { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\ddf08c87330e176b87ac0eba50d1040a\appcompat-1.1.0\res\layout\abc_alert_dialog_button_bar_material.xml:26
+-keep class androidx.appcompat.widget.ButtonBarLayout { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\ddf08c87330e176b87ac0eba50d1040a\appcompat-1.1.0\res\layout\abc_screen_content_include.xml:19
+-keep class androidx.appcompat.widget.ContentFrameLayout { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\ddf08c87330e176b87ac0eba50d1040a\appcompat-1.1.0\res\layout\abc_alert_dialog_title_material.xml:45
+-keep class androidx.appcompat.widget.DialogTitle { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\ddf08c87330e176b87ac0eba50d1040a\appcompat-1.1.0\res\layout\abc_screen_simple_overlay_action_mode.xml:23
+-keep class androidx.appcompat.widget.FitWindowsFrameLayout { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\ddf08c87330e176b87ac0eba50d1040a\appcompat-1.1.0\res\layout\abc_screen_simple.xml:17
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\ddf08c87330e176b87ac0eba50d1040a\appcompat-1.1.0\res\layout\abc_dialog_title_material.xml:22
+-keep class androidx.appcompat.widget.FitWindowsLinearLayout { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\ddf08c87330e176b87ac0eba50d1040a\appcompat-1.1.0\res\layout\abc_search_view.xml:75
+-keep class androidx.appcompat.widget.SearchView$SearchAutoComplete { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout\toolbar.xml:9
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\ddf08c87330e176b87ac0eba50d1040a\appcompat-1.1.0\res\layout\abc_screen_toolbar.xml:36
+-keep class androidx.appcompat.widget.Toolbar { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\ddf08c87330e176b87ac0eba50d1040a\appcompat-1.1.0\res\layout\abc_screen_simple_overlay_action_mode.xml:32
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\ddf08c87330e176b87ac0eba50d1040a\appcompat-1.1.0\res\layout\abc_screen_simple.xml:25
+-keep class androidx.appcompat.widget.ViewStubCompat { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout\list_item_task_out.xml:11
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout\list_item_task_other.xml:11
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout\list_item_task_in.xml:11
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout\activity_user_control.xml:122
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout\activity_new_task.xml:61
+-keep class androidx.cardview.widget.CardView { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout-land\activity_tab_host.xml:3
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout\activity_user_control.xml:2
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout\activity_start.xml:2
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout\activity_restore_pass.xml:2
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout\activity_new_group.xml:2
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout\activity_login.xml:2
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout\activity_help.xml:2
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout\activity_employee_list.xml:3
+-keep class androidx.constraintlayout.widget.ConstraintLayout { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\bfed7271f6f4e133e45140beb7d7fd9f\material-1.0.0\res\layout\design_bottom_sheet_dialog.xml:26
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout\activity_tab_host.xml:11
+-keep class androidx.coordinatorlayout.widget.CoordinatorLayout { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\ddf08c87330e176b87ac0eba50d1040a\appcompat-1.1.0\res\layout\abc_alert_dialog_material.xml:41
+-keep class androidx.core.widget.NestedScrollView { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\incremental\mergeDebugResources\stripped.dir\layout\fragment_task_list.xml:53
+-keep class androidx.recyclerview.widget.RecyclerView { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\incremental\mergeDebugResources\stripped.dir\layout\fragment_task_list.xml:47
+-keep class androidx.swiperefreshlayout.widget.SwipeRefreshLayout { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout\activity_tab_host.xml:47
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout\activity_employee_list.xml:40
+-keep class androidx.viewpager.widget.ViewPager { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout\activity_tab_host.xml:27
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout\activity_employee_list.xml:20
+-keep class com.google.android.material.appbar.AppBarLayout { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout\activity_tab_host.xml:63
+-keep class com.google.android.material.floatingactionbutton.FloatingActionButton { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\bfed7271f6f4e133e45140beb7d7fd9f\material-1.0.0\res\layout\design_bottom_navigation_item.xml:27
+-keep class com.google.android.material.internal.BaselineLayout { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\bfed7271f6f4e133e45140beb7d7fd9f\material-1.0.0\res\layout\design_text_input_password_icon.xml:18
+-keep class com.google.android.material.internal.CheckableImageButton { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\bfed7271f6f4e133e45140beb7d7fd9f\material-1.0.0\res\layout\design_navigation_item.xml:17
+-keep class com.google.android.material.internal.NavigationMenuItemView { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\bfed7271f6f4e133e45140beb7d7fd9f\material-1.0.0\res\layout\design_navigation_menu.xml:17
+-keep class com.google.android.material.internal.NavigationMenuView { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\bfed7271f6f4e133e45140beb7d7fd9f\material-1.0.0\res\layout\mtrl_layout_snackbar.xml:18
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\bfed7271f6f4e133e45140beb7d7fd9f\material-1.0.0\res\layout\design_layout_snackbar.xml:18
+-keep class com.google.android.material.snackbar.Snackbar$SnackbarLayout { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\bfed7271f6f4e133e45140beb7d7fd9f\material-1.0.0\res\layout\mtrl_layout_snackbar_include.xml:18
+# Referenced at C:\Users\Scada-SSD\.gradle\caches\transforms-2\files-2.1\bfed7271f6f4e133e45140beb7d7fd9f\material-1.0.0\res\layout\design_layout_snackbar_include.xml:18
+-keep class com.google.android.material.snackbar.SnackbarContentLayout { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout\activity_tab_host.xml:37
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout\activity_employee_list.xml:30
+-keep class com.google.android.material.tabs.TabLayout { <init>(...); }
+
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\incremental\mergeDebugResources\stripped.dir\layout\activity_task_description.xml:202
+-keepclassmembers class * { *** activateTaskOnClick(android.view.View); }
+
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout\activity_new_group.xml:76
+-keepclassmembers class * { *** createGroupAdmin(android.view.View); }
+
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout\activity_user_control.xml:89
+-keepclassmembers class * { *** createUser(android.view.View); }
+
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\incremental\mergeDebugResources\stripped.dir\layout\activity_task_description.xml:258
+-keepclassmembers class * { *** deactivateTaskOnClick(android.view.View); }
+
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\incremental\mergeDebugResources\stripped.dir\layout\activity_task_description.xml:306
+-keepclassmembers class * { *** deleteTaskOnClick(android.view.View); }
+
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout\activity_user_control.xml:148
+-keepclassmembers class * { *** deleteUser(android.view.View); }
+
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\build\intermediates\incremental\mergeDebugResources\stripped.dir\layout\activity_task_description.xml:177
+-keepclassmembers class * { *** doneTaskOnClick(android.view.View); }
+
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout\activity_user_control.xml:270
+-keepclassmembers class * { *** launchTestPurchase(android.view.View); }
+
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout\activity_login.xml:48
+-keepclassmembers class * { *** loginOnclick(android.view.View); }
+
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout\activity_restore_pass.xml:53
+-keepclassmembers class * { *** sendPhoneOnclick(android.view.View); }
+
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout\activity_restore_pass.xml:91
+-keepclassmembers class * { *** sendSmsCodeOnclick(android.view.View); }
+
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout\activity_user_control.xml:205
+-keepclassmembers class * { *** setAnotherAdmin(android.view.View); }
+
+# Referenced at C:\Users\Scada-SSD\AndroidStudioProjects\ProgressMonitor\app\src\main\res\layout\activity_new_task.xml:128
+-keepclassmembers class * { *** showDatePickerDialog(android.view.View); }
+
+
+-dontwarn android.databinding.ViewDataBinding
+-dontwarn android.databinding.ViewDataBinding$LiveDataListener
+
+# instant apps load these via reflection so we need to keep them.
+-keep public class * extends android.databinding.DataBinderMapper
+
+
+# Copyright (C) 2015 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# CoordinatorLayout resolves the behaviors of its child components with reflection.
+-keep public class * extends androidx.coordinatorlayout.widget.CoordinatorLayout$Behavior {
+    public <init>(android.content.Context, android.util.AttributeSet);
+    public <init>();
+}
+
+# Make sure we keep annotations for CoordinatorLayout's DefaultBehavior
+-keepattributes *Annotation*
+
+# Copyright (C) 2018 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Ensure that reflectively-loaded inflater is not obfuscated. This can be
+# removed when we stop supporting AAPT1 builds.
+-keepnames class androidx.appcompat.app.AppCompatViewInflater
+
+# aapt is not able to read app::actionViewClass and app:actionProviderClass to produce proguard
+# keep rules. Add a commonly used SearchView to the keep list until b/109831488 is resolved.
+-keep class androidx.appcompat.widget.SearchView { <init>(...); }
+# Copyright (C) 2015 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# When layoutManager xml attribute is used, RecyclerView inflates
+#LayoutManagers' constructors using reflection.
+-keep public class * extends androidx.recyclerview.widget.RecyclerView$LayoutManager {
+    public <init>(android.content.Context, android.util.AttributeSet, int, int);
+    public <init>();
+}
+
+-keep class * extends androidx.work.Worker
+-keep class * extends androidx.work.InputMerger
+# Keep all constructors on ListenableWorker, Worker (also marked with @Keep)
+-keep public class * extends androidx.work.ListenableWorker {
+    public <init>(...);
+}
+# We need to keep WorkerParameters for the ListenableWorker constructor
+-keep class androidx.work.WorkerParameters
+
+-keep class * extends androidx.room.RoomDatabase
+-dontwarn androidx.room.paging.**
+
+# Analytics library is optional.
+# Access to this class is protected by try/catch(NoClassDefFoundError e)
+# b/35686744 Don't fail during proguard if the class is missing from the APK.
+-dontwarn com.google.android.gms.measurement.AppMeasurement*
+-dontwarn com.google.appengine.api.**
+-dontwarn okio.**
+-dontwarn org.apache.**
+-dontwarn retrofit.android.**
+-dontwarn retrofit.appengine.**
+-dontwarn retrofit.client.**
+-dontwarn rx.**
+
+# This is necessary for keeping SecureTokenHttpApi and IdentityToolkitHttpApi
+# Otherwise those classes get stripped out, as they are only being used
+# reflectively.
+-keepclasseswithmembernames interface * {
+    @retrofit.http.* <methods>;
+}
+
+# We keep all fields for every generated proto file as the runtime uses
+# reflection over them that ProGuard cannot detect. Without this keep
+# rule, fields may be removed that would cause runtime failures.
+-keepclassmembers class * extends com.google.android.gms.internal.firebase-auth-api.zzql {
+  <fields>;
+}
+
+# Keep the AIDL interface
+-keep class com.android.vending.billing.** { *; }
+# b/35135904 Ensure that proguard will not strip the mResultGuardian.
+-keepclassmembers class com.google.android.gms.common.api.internal.BasePendingResult {
+  com.google.android.gms.common.api.internal.BasePendingResult$ReleasableResultGuardian mResultGuardian;
+}
+
+# Can be removed once we pull in a dependency on firebase-common that includes
+# https://github.com/firebase/firebase-android-sdk/pull/1472/commits/856f1ca1151cdd88679bbc778892f23dfa34fc06#diff-a2ed34b5a38b4c6c686b09e54865eb48
+-dontwarn com.google.auto.value.AutoValue
+-dontwarn com.google.auto.value.AutoValue$Builder
+
+# We keep all fields for every generated proto file as the runtime uses
+# reflection over them that ProGuard cannot detect. Without this keep
+# rule, fields may be removed that would cause runtime failures.
+-keepclassmembers class * extends com.google.android.gms.internal.measurement.zzhy {
+  <fields>;
+}
+
+-dontwarn com.google.firebase.platforminfo.KotlinDetector
+-dontwarn com.google.auto.value.AutoValue
+-dontwarn com.google.auto.value.AutoValue$Builder
+# We keep all fields for every generated proto file as the runtime uses
+# reflection over them that ProGuard cannot detect. Without this keep
+# rule, fields may be removed that would cause runtime failures.
+-keepclassmembers class * extends com.google.android.gms.internal.measurement.zzhy {
+  <fields>;
+}
+
+# We keep all fields for every generated proto file as the runtime uses
+# reflection over them that ProGuard cannot detect. Without this keep
+# rule, fields may be removed that would cause runtime failures.
+-keepclassmembers class * extends com.google.android.gms.internal.measurement.zzhy {
+  <fields>;
+}
+
+# We keep all fields for every generated proto file as the runtime uses
+# reflection over them that ProGuard cannot detect. Without this keep
+# rule, fields may be removed that would cause runtime failures.
+-keepclassmembers class * extends com.google.android.gms.internal.measurement.zzhy {
+  <fields>;
+}
+
+# We keep all fields for every generated proto file as the runtime uses
+# reflection over them that ProGuard cannot detect. Without this keep
+# rule, fields may be removed that would cause runtime failures.
+-keepclassmembers class * extends com.google.android.gms.internal.measurement.zzhy {
+  <fields>;
+}
+
+# We keep all fields for every generated proto file as the runtime uses
+# reflection over them that ProGuard cannot detect. Without this keep
+# rule, fields may be removed that would cause runtime failures.
+-keepclassmembers class * extends com.google.android.gms.internal.measurement.zzhy {
+  <fields>;
+}
+
+# Proguard flags for consumers of the Google Play services SDK
+# https://developers.google.com/android/guides/setup#add_google_play_services_to_your_project
+
+# Keep SafeParcelable NULL value, needed for reflection by DowngradeableSafeParcel
+-keepclassmembers public class com.google.android.gms.common.internal.safeparcel.SafeParcelable {
+    public static final *** NULL;
+}
+
+# Needed for Parcelable/SafeParcelable classes & their creators to not get renamed, as they are
+# found via reflection.
+-keep class com.google.android.gms.common.internal.ReflectedParcelable
+-keepnames class * implements com.google.android.gms.common.internal.ReflectedParcelable
+-keepclassmembers class * implements android.os.Parcelable {
+  public static final *** CREATOR;
+}
+
+# Keep the classes/members we need for client functionality.
+-keep @interface android.support.annotation.Keep
+-keep @androidx.annotation.Keep class *
+-keepclasseswithmembers class * {
+  @androidx.annotation.Keep <fields>;
+}
+-keepclasseswithmembers class * {
+  @androidx.annotation.Keep <methods>;
+}
+
+# Keep androidX equivalent of above android.support to allow Jetification.
+-keep @interface androidx.annotation.Keep
+-keep @androidx.annotation.Keep class *
+-keepclasseswithmembers class * {
+  @androidx.annotation.Keep <fields>;
+}
+-keepclasseswithmembers class * {
+  @androidx.annotation.Keep <methods>;
+}
+
+# Keep the names of classes/members we need for client functionality.
+-keep @interface com.google.android.gms.common.annotation.KeepName
+-keepnames @com.google.android.gms.common.annotation.KeepName class *
+-keepclassmembernames class * {
+  @com.google.android.gms.common.annotation.KeepName *;
+}
+
+# Keep Dynamite API entry points
+-keep @interface com.google.android.gms.common.util.DynamiteApi
+-keep @com.google.android.gms.common.util.DynamiteApi public class * {
+  public <fields>;
+  public <methods>;
+}
+
+# Needed when building against pre-Marshmallow SDK.
+-dontwarn android.security.NetworkSecurityPolicy
+
+# Needed when building against Marshmallow SDK.
+-dontwarn android.app.Notification
+
+# Protobuf has references not on the Android boot classpath
+-dontwarn sun.misc.Unsafe
+-dontwarn libcore.io.Memory
+
+# Internal Google annotations for generating Proguard keep rules.
+-dontwarn com.google.android.apps.common.proguard.UsedBy*
+
+# Annotations referenced by the SDK but whose definitions are contained in
+# non-required dependencies.
+-dontwarn javax.annotation.**
+-dontwarn org.checkerframework.**
+# Copyright (C) 2017 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Prevent Parcelable objects from being removed or renamed.
+-keep class android.support.v4.media.** implements android.os.Parcelable {
+    public static final android.os.Parcelable$Creator *;
+}
+
+# Prevent Parcelable objects from being removed or renamed.
+-keep class androidx.media.** implements android.os.Parcelable {
+    public static final android.os.Parcelable$Creator *;
+}
+# Copyright (C) 2017 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Keep a field in transition that is used to keep a reference to weakly-referenced object
+-keepclassmembers class androidx.transition.ChangeBounds$* extends android.animation.AnimatorListenerAdapter {
+  androidx.transition.ChangeBounds$ViewBounds mViewBounds;
+}
+
+# Copyright (C) 2016 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# keep setters in VectorDrawables so that animations can still work.
+-keepclassmembers class androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$* {
+   void set*(***);
+   *** get*();
+}
+
+# Copyright (C) 2016 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# CoordinatorLayout resolves the behaviors of its child components with reflection.
+-keep public class * extends androidx.coordinatorlayout.widget.CoordinatorLayout$Behavior {
+    public <init>(android.content.Context, android.util.AttributeSet);
+    public <init>();
+}
+
+# Make sure we keep annotations for CoordinatorLayout's DefaultBehavior and ViewPager's DecorView
+-keepattributes *Annotation*
+
+# aapt2 is not (yet) keeping FQCNs defined in the appComponentFactory <application> attribute
+-keep class androidx.core.app.CoreComponentFactory
+
+-keepattributes *Annotation*
+
+-keepclassmembers enum androidx.lifecycle.Lifecycle$Event {
+    <fields>;
+}
+
+-keep !interface * implements androidx.lifecycle.LifecycleObserver {
+}
+
+-keep class * implements androidx.lifecycle.GeneratedAdapter {
+    <init>(...);
+}
+
+-keepclassmembers class ** {
+    @androidx.lifecycle.OnLifecycleEvent *;
+}
+-keep public class * implements androidx.versionedparcelable.VersionedParcelable
+-keep public class android.support.**Parcelizer { *; }
+-keep public class androidx.**Parcelizer { *; }
+-keep public class androidx.versionedparcelable.ParcelImpl
+
+-dontwarn com.google.firebase.components.Component$Instantiation
+-dontwarn com.google.firebase.components.Component$ComponentType
+-keep class * implements com.google.firebase.components.ComponentRegistrar
+
+-dontwarn com.google.auto.value.AutoValue
+-dontwarn com.google.auto.value.AutoValue$Builder
+-dontwarn com.google.auto.value.AutoValue
+-dontwarn com.google.auto.value.AutoValue$Builder
+-dontwarn com.google.auto.value.AutoValue
+-dontwarn com.google.auto.value.AutoValue$Builder
+
+# Copyright (C) 2019 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+-keepclassmembers,allowobfuscation class * implements androidx.savedstate.SavedStateRegistry$AutoRecreated {
+    <init>();
+}
+
+-keepclassmembers,allowobfuscation class * extends androidx.lifecycle.ViewModel {
+    <init>();
+}
+
+-keepclassmembers,allowobfuscation class * extends androidx.lifecycle.AndroidViewModel {
+    <init>(android.app.Application);
+}
+
+-keep,allowobfuscation @interface androidx.annotation.Keep
+-keep @androidx.annotation.Keep class * {*;}
+
+-keepclasseswithmembers class * {
+    @androidx.annotation.Keep <methods>;
+}
+
+-keepclasseswithmembers class * {
+    @androidx.annotation.Keep <fields>;
+}
+
+-keepclasseswithmembers class * {
+    @androidx.annotation.Keep <init>(...);
+}
+
+# JSR 305 annotations are for embedding nullability information.
+-dontwarn javax.annotation.**
+
+# A resource is loaded with a relative path so the package of this class must be preserved.
+-keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
+
+# Animal Sniffer compileOnly dependency to ensure APIs are compatible with older versions of Java.
+-dontwarn org.codehaus.mojo.animal_sniffer.*
+
+# OkHttp platform used only on JVM and when Conscrypt dependency is available.
+-dontwarn okhttp3.internal.platform.ConscryptPlatform
+
+-ignorewarnings

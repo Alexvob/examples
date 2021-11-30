@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="task"
+            type="com.astudio.progressmonitor.task.Task" />
+        <variable
+            name="bindSupport"
+            type="com.astudio.progressmonitor.support.BindSupport"/>
+        <variable
+            name="globalData"
+            type="com.astudio.progressmonitor.modules.GlobalData"/>
+    </data>
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+
+    <include
+        layout="@layout/toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        />
+
+    <ScrollView
+        android:background="@color/colorBackgroundDescTask"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+
+        <LinearLayout
+            android:id="@+id/layout_root_task_desc"
+            android:orientation="vertical"
+            android:layout_marginStart="7sp"
+            android:layout_marginEnd="5sp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+    <!--
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="21sp"
+                android:text="@{@string/task_title(task.title)}">
+            </TextView>
+    -->
+
+            <TextView
+                style="@style/HintTextTask"
+                android:text="@string/hint_task_from">
+            </TextView>
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="21sp"
+                android:text="@{task.from.equals(globalData.userName) ? @string/from_me : @string/task_from(task.from)}">
+            </TextView>
+
+
+            <View
+                android:id="@+id/separator1"
+                style="@style/Separator"/>
+
+
+            <TextView
+                style="@style/HintTextTask"
+                android:text="@string/hint_task_for">
+            </TextView>
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="21sp"
+                android:text="@{task.forfio.equals(globalData.userName) ? @string/for_me : @string/task_from(task.forfio)}">
+            </TextView>
+
+
+            <View
+                android:id="@+id/separator2"
+                style="@style/Separator"/>
+
+
+            <TextView
+                style="@style/HintTextTask"
+                android:text="@string/hint_task_desc">
+            </TextView>
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="21sp"
+                android:text="@{@string/task_desc(task.desc)}">
+            </TextView>
+
+
+            <View
+                android:id="@+id/separator3"
+                style="@style/Separator"/>
+
+            <TextView
+                style="@style/HintTextTask"
+                android:text="@string/hint_task_time_limit">
+            </TextView>
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="21sp"
+                android:text="@{@string/task_time_limit(task.timeLimit)}">
+            </TextView>
+
+
+            <View
+                android:id="@+id/separator5"
+                style="@style/Separator"/>
+
+
+
+
+
+                    <TextView
+                        style="@style/HintTextTask"
+                        android:text="@string/hint_task_status">
+                    </TextView>
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:textSize="21sp"
+                        android:text="@{@string/task_status(bindSupport.getStatus())}">
+                    </TextView>
+
+
+        <!--        <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_gravity="end">
+
+                    <TextView
+                        style="@style/HintText"
+                        android:layout_marginStart="40dp"
+                        android:text="@string/hint_done" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox_done_task"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="110dp"
+                        android:onClick="onCheckboxDoneTask"/>
+                </LinearLayout> -->
+
+            <View
+                android:id="@+id/separator4"
+                style="@style/Separator"/>
+
+
+
+            <RelativeLayout
+                android:id="@+id/root_done_task"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/HintTextTask"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/hint_done_task" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_done_task"
+                    android:layout_width="42dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"
+                    app:icon="@drawable/create_task_dark"
+                    app:iconGravity="textStart"
+                    app:iconPadding="0dp"
+                    android:contentDescription="@string/hint_done_task"
+                    android:drawableTop="@drawable/create_task_dark"
+                    android:onClick="doneTaskOnClick"/>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/root_activate_task"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/HintTextTask"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/hint_activate_task" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_activate_task"
+                    android:layout_width="42dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"
+                    app:icon="@drawable/activate_task_dark"
+                    app:iconGravity="textStart"
+                    app:iconPadding="0dp"
+                    android:contentDescription="@string/hint_activate_task"
+                    android:onClick="activateTaskOnClick"/>
+
+            </RelativeLayout>
+
+
+            <View
+                android:id="@+id/separatorDone"
+                style="@style/Separator"/>
+    <!--
+    android:text="@{@string/task_from(task.from)}">
+    android:text="@{@string/task_for(task.forfio)}">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="23sp"
+                android:text="@{@string/task_status(task.status)}">
+            </TextView>
+    -->
+
+            <TextView
+                style="@style/HintTextTask"
+                android:text="@string/hint_task_created">
+            </TextView>
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="21sp"
+                android:text="@{@string/task_createdAt(task.createdAt)}">
+            </TextView>
+
+
+            <View
+                android:id="@+id/separator6"
+                style="@style/Separator"/>
+
+            <RelativeLayout
+                android:id="@+id/root_deactivate_task"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/HintTextTask"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/hint_deactivate_task" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_deactivate_task"
+                    android:layout_width="42dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"
+                    app:icon="@drawable/deactivate_task_dark"
+                    app:iconGravity="textStart"
+                    app:iconPadding="0dp"
+                    android:contentDescription="@string/hint_deactivate_task"
+                    android:onClick="deactivateTaskOnClick"/>
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/separatorDeactivate"
+                style="@style/Separator"/>
+
+            <TextView
+                style="@style/HintTextTask"
+                android:text="@string/hint_task_updated">
+            </TextView>
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="21sp"
+                android:text="@{@string/task_updatedAt(task.updatedAt)}">
+            </TextView>
+
+
+            <View
+                android:id="@+id/separator7"
+                style="@style/Separator"/>
+
+
+
+            <RelativeLayout
+                android:id="@+id/root_delete_task"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    style="@style/HintTextTask"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/hint_delete_task" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_delete_task"
+                    android:layout_width="42dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"
+                    android:shadowColor="@color/colorAccent"
+                    app:icon="@drawable/delete_task_dark"
+                    app:iconGravity="textStart"
+                    app:iconPadding="0dp"
+                    android:contentDescription="@string/hint_delete_task"
+                    android:onClick="deleteTaskOnClick"/>
+
+<!--
+                <Button
+                    android:layout_marginTop="50dp"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/deactivate"
+                    android:contentDescription="@string/hint_deactivate_task"
+                    android:visibility="gone"
+                    android:textColor="@android:color/white"
+                    />
+-->
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/separatorDelete"
+                style="@style/Separator"/>
+
+
+
+    <!--
+            <Button
+                android:id="@+id/status_success_task_btn"
+                android:layout_width="140sp"
+                android:layout_height="wrap_content"
+                android:text="@string/status_success"
+                android:onClick="statusSuccessOnClick">
+            </Button>
+
+            <Button
+                android:id="@+id/status_cancel_task_btn"
+                android:layout_width="140sp"
+                android:layout_height="wrap_content"
+                android:text="@string/status_cancel"
+                android:onClick="statusCancelOnClick">
+            </Button>
+
+            <Button
+                android:id="@+id/status_activate_task_btn"
+                android:layout_width="140sp"
+                android:layout_height="wrap_content"
+                android:text="@string/status_activate"
+                android:onClick="statusActivateOnClick">
+            </Button>
+
+            <Button
+                android:id="@+id/delete_task_btn"
+                android:layout_width="140sp"
+                android:layout_height="wrap_content"
+                android:text="@string/delete"
+                android:onClick="deleteOnClick">
+            </Button>
+    -->
+
+            <include
+                layout="@layout/promo"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                />
+
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+</LinearLayout>
+
+
+</layout>

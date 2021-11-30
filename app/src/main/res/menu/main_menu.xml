@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+<!--
+    <item
+        android:id="@+id/menu_home"
+        android:title="home"
+        android:icon="@drawable/home_page"
+        android:orderInCategory="10"
+        app:showAsAction="always">
+    </item>
+-->
+<!--
+    <item
+        android:id="@+id/menu_new_task"
+        android:title="@string/create_task_btn"
+        android:icon="@drawable/new_task_dark"
+        android:orderInCategory="10"
+        app:showAsAction="always">
+    </item>
+-->
+
+    <!--
+    <item
+        android:id="@+id/menu_lists"
+        android:title="lists"
+        android:icon="@drawable/list"
+        android:orderInCategory="9"
+        app:showAsAction="always">
+    </item>
+
+    <item
+        android:id="@+id/menu_peoples"
+        android:title="peoples"
+        android:icon="@drawable/peoples"
+        android:orderInCategory="9"
+        app:showAsAction="always">
+    </item>
+
+    <item
+        android:id="@+id/menu_statistic"
+        android:title="statistic"
+        android:icon="@drawable/statistic"
+        android:orderInCategory="10"
+        app:showAsAction="always">
+    </item>
+    -->
+
+    <item
+        android:id="@+id/menu_refresh"
+        android:title="@string/menu_refresh"
+        android:icon="@drawable/settings"
+        android:orderInCategory="17"
+        app:showAsAction="never">
+    </item>
+
+
+    <item
+        android:id="@+id/menu_rating"
+        android:title="@string/rating_title"
+        android:icon="@drawable/settings"
+        android:orderInCategory="18"
+        app:showAsAction="never">
+    </item>
+
+
+    <item
+        android:id="@+id/menu_statistic"
+        android:title="@string/statistic_title"
+        android:icon="@drawable/settings"
+        android:orderInCategory="19"
+        app:showAsAction="never">
+    </item>
+
+
+    <item
+        android:id="@+id/menu_user_control"
+        android:title="@string/menu_user_control"
+        android:icon="@drawable/settings"
+        android:orderInCategory="20"
+        app:showAsAction="never">
+    </item>
+
+    <item
+        android:id="@+id/menu_settings"
+        android:title="@string/title_settings_screen"
+        android:icon="@drawable/settings"
+        android:orderInCategory="22"
+        app:showAsAction="never">
+    </item>
+<!--
+    <item
+        android:id="@+id/menu_voting"
+        android:title="@string/title_voting_screen"
+        android:icon="@drawable/settings"
+        android:orderInCategory="21"
+        app:showAsAction="never">
+    </item>
+-->
+
+    <item
+        android:id="@+id/menu_help"
+        android:title="@string/help"
+        android:orderInCategory="23"
+        app:showAsAction="never">
+    </item>
+
+
+    <item
+        android:id="@+id/menu_scheme"
+        android:title="@string/title_structural_scheme"
+        android:icon="@drawable/settings"
+        android:orderInCategory="24"
+        app:showAsAction="never">
+    </item>
+
+
+    <item
+        android:id="@+id/menu_promo"
+        android:title="Promo"
+        android:icon="@drawable/settings"
+        android:orderInCategory="25"
+        app:showAsAction="never">
+    </item>
+
+
+
+<!--
+    <item
+        android:id="@+id/menu_logout"
+        android:title="@string/menu_logout"
+        android:icon="@drawable/settings"
+        android:orderInCategory="23"
+        app:showAsAction="never">
+    </item>
+    -->
+<!--
+    <item android:id="@+id/action_search"
+        android:title="@string/action_search"
+        android:icon="@drawable/ic_search"
+        android:orderInCategory="10"
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+-->
+</menu>

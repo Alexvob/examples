@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+
+        <item android:id="@+id/nav1"
+            android:title="@string/tasks"
+            android:icon="@drawable/settings"
+            app:showAsAction="always"/>
+
+        <item android:id="@+id/nav2"
+            android:title="@string/plans"
+            android:icon="@drawable/statistic"
+            app:showAsAction="always"/>
+
+        <item android:id="@+id/nav3"
+            android:title="@string/project_title"
+            android:icon="@drawable/list"
+
+            app:showAsAction="always"/>
+
+</menu>

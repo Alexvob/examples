@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".rating.RatingActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <include
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ScrollView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view4"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="5dp"
+            app:cardMaxElevation="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            app:contentPadding="0dp">
+
+
+            <Spinner
+                android:id="@+id/change_user_rating"
+                android:layout_width="300dp"
+                android:layout_height="48dp"
+                android:spinnerMode="dialog"
+                android:prompt="@string/prompt_change_user"/>
+
+
+
+        </androidx.cardview.widget.CardView>
+
+
+            <View
+                android:layout_width="300dp"
+                android:layout_height="1.0dp"
+                android:id="@+id/separator215"
+                android:layout_gravity="center_horizontal"
+                android:visibility="visible"
+                android:layout_margin="10dp"
+                android:background="@android:color/darker_gray"/>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view22"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="5dp"
+            app:cardMaxElevation="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_gravity="center_horizontal"
+            app:contentPadding="0dp">
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/chart_pie"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="300dp"
+                android:layout_height="300dp" />
+
+        </androidx.cardview.widget.CardView>
+
+
+            <View
+                android:layout_width="300dp"
+                android:layout_height="1.0dp"
+                android:id="@+id/separator212"
+                android:layout_gravity="center_horizontal"
+                android:visibility="visible"
+                android:layout_margin="10dp"
+                android:background="@android:color/darker_gray"/>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view21"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp"
+                app:cardMaxElevation="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_gravity="center_horizontal"
+                app:contentPadding="0dp">
+
+
+                <TextView
+                    android:id="@+id/hint_top5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/top5"
+                    android:textSize="22sp"
+                    android:singleLine="true"
+                    android:fontFamily="monospace"
+                    android:textColor="@color/colorHintDescTask"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/dynamic_textview_top5"/>
+
+                <LinearLayout
+                    android:id="@+id/layout_for_top5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <View
+                android:layout_width="300dp"
+                android:layout_height="1.0dp"
+                android:id="@+id/separator213"
+                android:layout_gravity="center_horizontal"
+                android:visibility="visible"
+                android:layout_margin="10dp"
+                android:background="@android:color/darker_gray"/>
+
+
+        </LinearLayout>
+
+        </ScrollView>
+
+
+
+    </LinearLayout>
+
+<!--
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        app:menu="@menu/my_navigation_items"
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_gravity="bottom"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+-->
+</androidx.constraintlayout.widget.ConstraintLayout>
+

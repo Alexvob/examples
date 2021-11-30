@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".promo.PromoActivity"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:text="Select advertiser"/>
+
+    <EditText
+        android:id="@+id/promo_advertiser_id_et"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:inputType="numberDecimal"/>
+
+
+    <TextView style="@style/Separator"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:text="Edit content"/>
+
+    <EditText
+        android:id="@+id/promo_content_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"/>
+
+
+    <TextView style="@style/Separator"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:text="Select duration"/>
+
+    <EditText
+        android:id="@+id/promo_duration_et"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:inputType="numberDecimal"/>
+
+
+    <TextView style="@style/Separator"/>
+
+
+    <TextView
+        android:id="@+id/promo_hint_select_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:text="Select image"/>
+
+
+    <Button
+        android:id="@+id/promo_select_image_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select image"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:onClick="uploadImageFromGallery"/>
+
+
+    <TextView style="@style/Separator"/>
+
+
+    <Button
+        android:id="@+id/promo_create_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create promo"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:onClick="createPromo"/>
+
+
+    <TextView
+       style="@style/Separator"/>
+
+
+    <Spinner
+        android:id="@+id/promo_delete_spinner"
+        style="@style/SpinnerUsers"
+        android:layout_width="280dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="30dp"
+        android:prompt="@string/prompt_change_user"
+        android:spinnerMode="dropdown" />
+
+    <Button
+        android:id="@+id/promo_delete_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete promo"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="60dp"
+        android:onClick="deletePromo"/>
+
+    </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

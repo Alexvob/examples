@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="top"
+    tools:layout_editor_absoluteY="59dp"
+    tools:layout_editor_absoluteX="50dp"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:windowSoftInputMode="stateAlwaysHidden">
+
+        <include
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <ScrollView
+            android:id="@+id/scroll_desc_task"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+<!--
+        <TextView
+            android:id="@+id/preview_text"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="17sp"
+            android:layout_marginBottom="5dp"
+            android:maxLength="30"
+            android:layout_marginStart="5dp"
+            android:text="Образец заголовка">
+        </TextView>
+
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2.8dp"
+            android:id="@+id/separator10"
+            android:visibility="visible"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@android:color/darker_gray"/>
+-->
+
+        <TextView
+            style="@style/HintTextTask"
+            android:text="@string/task_recipient"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="12dp">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginStart="12dp"
+            android:hint="@string/change_recipient"/>
+
+<!--
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            style="@style/CardViewMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            app:contentPadding="0dp">
+
+             </androidx.cardview.widget.CardView>
+
+              <Spinner
+                    android:id="@+id/forfio"
+                    style="@android:style/Widget.Holo.Light.Spinner"
+                    android:layout_width="280dp"
+                    android:prompt="@string/prompt_change_user"
+                    android:spinnerMode="dropdown"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"/>
+-->
+
+                <Spinner
+                    android:id="@+id/forfio"
+                    style="@style/SpinnerUsers"
+                    android:layout_width="280dp"
+                    android:layout_height="48dp"
+                    android:prompt="@string/prompt_change_user"
+                    android:spinnerMode="dropdown" />
+
+
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2.8dp"
+            android:id="@+id/separator1"
+            android:visibility="visible"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@android:color/darker_gray"/>
+
+
+        <TextView
+            style="@style/HintTextTask"
+            android:text="@string/hint_task_time_limit"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="5dp">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="7dp"
+            android:layout_marginStart="12dp"
+            android:hint="@string/change_task_limit"/>
+
+<!--
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_date"
+            style="@style/CardViewMain"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            app:contentPadding="0dp">
+
+             </androidx.cardview.widget.CardView> -->
+
+
+                        <!--style="@android:style/Widget.Holo.DatePicker"-->
+
+                <TextView
+                    android:id="@+id/tvDate"
+                    style="@style/DatePickerCustom"
+                    android:layout_width="280dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:onClick="showDatePickerDialog"
+                    android:paddingTop="10dp"
+                    android:textSize="18sp"
+                    android:focusable="true"
+                    android:contentDescription="@string/hint_tvDate"/>
+
+
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2.8dp"
+            android:id="@+id/separator2"
+            android:visibility="visible"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@android:color/darker_gray"/>
+
+
+        <TextView
+            style="@style/HintTextTask"
+            android:text="@string/task_desc_hint"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="10dp">
+        </TextView>
+
+
+        <EditText
+            android:id="@+id/desc_task"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="5dp"
+            android:hint="@string/enter_task_desc"
+            android:inputType="textCapSentences|textMultiLine"
+            android:minLines="2"
+            android:maxLines="30"
+            android:scrollbars="vertical"
+            android:maxLength="3000" />
+
+                </LinearLayout>
+
+        </ScrollView>
+
+
+    </LinearLayout>
+

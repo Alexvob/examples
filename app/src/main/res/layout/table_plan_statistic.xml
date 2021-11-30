@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableLayout android:id="@+id/table_personal_stat_plan2222"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:stretchColumns="*"
+    android:shrinkColumns="0">
+
+
+    <TableRow
+        android:gravity="start">
+
+        <TextView
+            android:typeface="monospace"
+            android:textStyle="bold"
+            android:text="@string/title_personal_stat"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="5dp"/>
+        <TextView android:text=""/>
+        <TextView android:text=""/>
+
+    </TableRow>
+
+    <View style="@style/Separator"/>
+
+    <TableRow
+        android:gravity="start"
+        android:divider="?android:dividerVertical"
+        android:showDividers="middle"
+        >
+
+        <TextView
+            android:typeface="monospace"
+            android:textColor="@color/colorAccent"
+            android:text="@string/index"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:typeface="monospace"
+            android:textColor="@color/colorAccent"
+            android:text="@string/value_h_m"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"/>
+
+        <TextView
+            android:typeface="monospace"
+            android:textColor="@color/colorAccent"
+            android:layout_marginStart="10dp"
+            android:text="@string/percent"/>
+
+    </TableRow>
+
+    <View style="@style/Separator"/>
+
+    <TableRow
+        android:gravity="start">
+
+        <TextView
+            android:text="@string/number_all_plan"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/stat_plan_self_all"
+            android:text=""
+            android:layout_marginStart="5dp"/>
+
+        <TextView android:text="" />
+
+    </TableRow>
+
+    <View style="@style/Separator"/>
+
+
+    <TableRow
+        android:gravity="start">
+
+        <TextView
+            android:text="@string/number_completed_plan"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/stat_plan_self_completed"
+            android:text=""
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:id="@+id/stat_plan_percent_completed"
+            android:text=""
+            android:layout_marginStart="5dp"/>
+
+    </TableRow>
+
+    <View style="@style/Separator"/>
+
+
+    <TableRow
+        android:gravity="start">
+
+        <TextView
+            android:text="@string/number_incomplete_plan"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/stat_plan_self_active"
+            android:text=""
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:id="@+id/stat_plan_percent_active"
+            android:text=""
+            android:layout_marginStart="5dp"/>
+    </TableRow>
+
+    <View style="@style/Separator"/>
+
+<!--
+    <TableRow
+        android:gravity="start">
+
+        <TextView
+            android:text="@string/number_rejected_plan"
+            android:layout_marginStart="15dp"/>
+
+        <TextView
+            android:id="@+id/stat_plan_self_rejected"
+            android:text=""
+            android:layout_marginStart="0dp"/>
+
+        <TextView
+            android:id="@+id/stat_plan_percent_rejected"
+            android:text=""/>
+
+    </TableRow>
+
+        <View style="@style/Separator"/>
+-->
+
+
+
+    <TextView
+        android:text="@string/relative_indicators"
+        android:textStyle="normal"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="10dp"/>
+
+    <View style="@style/Separator"/>
+
+
+    <TableRow
+        android:gravity="start"
+        android:divider="?android:dividerVertical"
+        android:showDividers="middle"
+        >
+
+        <TextView
+            android:typeface="monospace"
+            android:textColor="@color/colorAccent"
+            android:text="@string/index"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:typeface="monospace"
+            android:textColor="@color/colorAccent"
+            android:text="@string/value"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="0dp"/>
+
+        <TextView
+            android:typeface="monospace"
+            android:textColor="@color/colorAccent"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:text="@string/units"/>
+
+    </TableRow>
+
+    <View style="@style/Separator"/>
+
+
+    <TableRow
+        android:gravity="start">
+
+        <TextView
+            android:text="@string/planning_rate"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/group_average_plans"
+            android:text=""
+            android:layout_marginStart="5dp"/>
+
+        <TextView android:text="@string/value_h_m"
+            android:layout_marginStart="5dp"/>
+
+    </TableRow>
+
+
+    <TableRow
+        android:gravity="start">
+        <TextView
+            android:text="@string/hint_planning_rate"
+            android:textSize="10sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"/>
+        <TextView android:text=""/>
+        <TextView android:text=""/>
+    </TableRow>
+
+
+    <View style="@style/Separator"/>
+
+    <TableRow
+        android:gravity="start">
+
+        <TextView
+            android:text="@string/actual_planning"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/your_k1"
+            android:text=""
+            android:layout_marginStart="5dp"/>
+
+        <TextView android:text="@string/percent"
+            android:layout_marginStart="5dp"/>
+
+    </TableRow>
+
+    <TableRow
+        android:gravity="start">
+        <TextView
+            android:text="@string/hint_actual_planning"
+            android:textSize="10sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"/>
+        <TextView android:text=""/>
+        <TextView android:text=""/>
+    </TableRow>
+
+
+    <View style="@style/Separator"/>
+
+    <TableRow
+        android:gravity="start">
+
+        <TextView
+            android:text="@string/actual_execution"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/your_k2"
+            android:text=""
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:text="@string/percent"
+            android:layout_marginStart="5dp"/>
+
+    </TableRow>
+
+
+    <TableRow
+        android:gravity="start">
+        <TextView
+            android:text="@string/hint_actual_execution"
+            android:textSize="10sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"/>
+        <TextView android:text=""/>
+        <TextView android:text=""/>
+    </TableRow>
+
+
+    <View style="@style/Separator"/>
+<!--
+    <TableRow
+        android:gravity="start">
+
+        <TextView
+            android:text="Забраковано (Кб):"
+            android:layout_marginStart="15dp"/>
+
+        <TextView
+            android:id="@+id/your_k3"
+            android:text="" />
+
+    </TableRow>
+
+    <TextView
+        android:text="(Отклонено / норма планирования) * 2 [штраф]"
+        android:textSize="10sp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="0dp"/>
+
+    <View style="@style/Separator"/>
+
+    <TableRow
+        android:gravity="start">
+
+        <TextView
+            android:text="Итог: Кф + Кв - Кб:"
+            android:textStyle="bold"
+            android:layout_marginStart="15dp"/>
+
+        <TextView
+            android:id="@+id/your_total"
+            android:textStyle="bold"
+            android:text="" />
+
+    </TableRow>
+
+    <View style="@style/Separator"/>
+-->
+<!--
+    <TableRow
+        android:gravity="center_horizontal"
+        android:layout_marginTop="15dp">
+-->
+
+
+        <TextView
+            android:text="@string/title_subordinate_stat"
+            android:textStyle="bold"
+            android:typeface="monospace"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="5dp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="0dp">
+
+        <TextView
+            android:text="@string/employees"
+            android:textStyle="normal"
+            android:typeface="monospace"
+            android:layout_marginStart="20dp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" />
+
+        <TextView
+            android:id="@+id/stat_plan_number_employees"
+            android:textStyle="bold"
+            android:typeface="monospace"
+            android:text=""
+            android:layout_marginStart="5dp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" />
+
+        <TextView
+            android:text=" )"
+            android:textStyle="normal"
+            android:typeface="monospace"
+            android:layout_marginStart="0dp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" />
+
+    </LinearLayout>
+<!--
+    </TableRow>
+-->
+    <View style="@style/Separator"/>
+
+    <TableRow
+        android:gravity="start"
+        android:divider="?android:dividerVertical"
+        android:showDividers="middle">
+
+        <TextView
+            android:typeface="monospace"
+            android:textColor="@color/colorAccent"
+            android:text="@string/index"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:typeface="monospace"
+            android:textColor="@color/colorAccent"
+            android:text="@string/value_h_m"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp" />
+
+        <TextView
+            android:typeface="monospace"
+            android:textColor="@color/colorAccent"
+            android:layout_marginStart="10dp"
+            android:text="@string/percent"/>
+
+    </TableRow>
+
+    <View style="@style/Separator"/>
+
+
+
+    <TableRow
+        android:gravity="start">
+
+        <TextView
+            android:text="@string/number_all_plan"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/stat_plan_employee_all"
+            android:text=""
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:text=""/>
+
+    </TableRow>
+
+    <View style="@style/Separator"/>
+
+
+    <TableRow
+        android:gravity="start">
+
+        <TextView
+            android:text="@string/number_completed_plan"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/stat_plan_employee_completed"
+            android:text=""
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:id="@+id/stat_plan_employee_percent_completed"
+            android:text=""
+            android:layout_marginStart="5dp"/>
+
+    </TableRow>
+
+    <View style="@style/Separator"/>
+
+
+    <TableRow
+        android:gravity="start">
+
+        <TextView
+            android:text="@string/number_incomplete_plan"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/stat_plan_employee_active"
+            android:text=""
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:id="@+id/stat_plan_employee_percent_active"
+            android:text=""
+            android:layout_marginStart="5dp"/>
+    </TableRow>
+
+    <View style="@style/Separator"/>
+
+<!--
+    <TableRow
+        android:gravity="start">
+
+        <TextView
+            android:text="@string/number_rejected_plan"
+            android:layout_marginStart="15dp"/>
+
+        <TextView
+            android:id="@+id/stat_plan_employee_rejected"
+            android:text=""
+            android:layout_marginStart="0dp"/>
+
+        <TextView
+            android:id="@+id/stat_plan_employee_percent_rejected"
+            android:text=""/>
+
+    </TableRow>
+
+    <View style="@style/Separator"/>
+-->
+
+
+    <TextView
+        android:text="@string/relative_indicators"
+        android:textStyle="normal"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="10dp"/>
+
+    <View style="@style/Separator"/>
+
+
+    <TableRow
+        android:gravity="start"
+        android:divider="?android:dividerVertical"
+        android:showDividers="middle"
+        >
+
+        <TextView
+            android:typeface="monospace"
+            android:textColor="@color/colorAccent"
+            android:text="@string/index"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:typeface="monospace"
+            android:textColor="@color/colorAccent"
+            android:text="@string/value"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="0dp"/>
+
+        <TextView
+            android:typeface="monospace"
+            android:textColor="@color/colorAccent"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:text="@string/units"/>
+
+    </TableRow>
+
+    <View style="@style/Separator"/>
+
+
+    <TableRow
+        android:gravity="start">
+
+        <TextView
+            android:text="@string/planning_rate"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/group_average_plans_sub"
+            android:text=""
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:text="@string/value_h_m"
+            android:layout_marginStart="5dp"/>
+
+    </TableRow>
+
+
+    <TableRow
+        android:gravity="start">
+        <TextView
+            android:text="@string/hint_planning_rate_sub"
+            android:textSize="10sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"/>
+        <TextView android:text=""/>
+        <TextView android:text=""/>
+    </TableRow>
+
+
+    <View style="@style/Separator"/>
+
+    <TableRow
+        android:gravity="start">
+
+        <TextView
+            android:text="@string/actual_planning"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/your_k1_sub"
+            android:layout_marginStart="5dp"
+            android:text="" />
+
+        <TextView
+            android:text="@string/percent"
+            android:layout_marginStart="5dp"/>
+
+    </TableRow>
+
+    <TableRow
+        android:gravity="start">
+        <TextView
+            android:text="@string/hint_actual_planning"
+            android:textSize="10sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"/>
+        <TextView android:text=""/>
+        <TextView android:text=""/>
+    </TableRow>
+
+
+
+    <View style="@style/Separator"/>
+
+    <TableRow
+        android:gravity="start">
+
+        <TextView
+            android:text="@string/actual_execution"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/your_k2_sub"
+            android:text=""
+            android:layout_marginStart="5dp"/>
+
+
+        <TextView
+            android:text="@string/percent"
+            android:layout_marginStart="5dp"/>
+
+    </TableRow>
+
+    <TableRow
+        android:gravity="start">
+
+        <TextView
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/hint_actual_execution"
+            android:textSize="10sp" />
+
+        <TextView android:text=""/>
+        <TextView android:text=""/>
+    </TableRow>
+
+
+    <View style="@style/Separator"/>
+
+    <TableRow
+        android:gravity="start">
+
+        <TextView
+            android:text="@string/control_child_plan"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/control_plans"
+            android:text=""
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:text="@string/percent"
+            android:layout_marginStart="5dp"/>
+
+    </TableRow>
+
+
+    <View style="@style/Separator"/>
+
+    <!--
+    <TableRow
+        android:gravity="start">
+
+        <TextView
+            android:text="Забраковано (Кб):"
+            android:layout_marginStart="15dp"/>
+
+        <TextView
+            android:id="@+id/your_k3_sub"
+            android:text="" />
+
+    </TableRow>
+
+    <TextView
+        android:text="(Отклонено / норма планирования) * 2 [штраф]"
+        android:textSize="10sp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="0dp"/>
+
+    <View style="@style/Separator"/>
+
+
+    <TableRow
+        android:gravity="start">
+
+        <TextView
+            android:text="Итог: Кф + Кв - Кб:"
+            android:textStyle="bold"
+            android:layout_marginStart="15dp"/>
+
+        <TextView
+            android:id="@+id/your_total_sub"
+            android:textStyle="bold"
+            android:text="" />
+
+    </TableRow>
+
+    <View style="@style/Separator"/>
+-->
+
+
+    <TableRow>
+        <TextView android:text="" />
+    </TableRow>
+    <View style="@style/Separator"
+        android:layout_marginBottom="60dp"/>
+
+</TableLayout>
+
+
+

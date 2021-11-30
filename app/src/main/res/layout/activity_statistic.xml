@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".statistic.StatisticActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="59dp"
+        tools:layout_editor_absoluteX="50dp">
+
+
+        <include
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="5dp"
+                    app:cardMaxElevation="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_gravity="center_horizontal"
+                    app:contentPadding="0dp">
+
+
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/chart_bar"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="7dp"
+                        android:layout_height="250dp" />
+
+                </androidx.cardview.widget.CardView>
+
+
+                <View
+                    android:id="@+id/separator222"
+                    style="@style/Separator"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="5dp"
+                    app:cardMaxElevation="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_gravity="center_horizontal"
+                    app:contentPadding="0dp">
+
+
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/chart_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:layout_marginTop="7dp" />
+
+                </androidx.cardview.widget.CardView>
+
+
+                <View
+                    android:id="@+id/separator221"
+                    style="@style/Separator"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"/>
+
+
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="5dp"
+                    app:cardMaxElevation="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_gravity="center_horizontal"
+                    app:contentPadding="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginStart="7dp"
+                android:text="@string/name_company"
+                android:textColor="@color/colorGrey"
+                android:singleLine="true"
+                android:textSize="16sp"
+                android:layout_weight="0.75"
+                />
+
+            <TextView
+                android:id="@+id/profile_group_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="end"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:singleLine="true"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp"
+                android:layout_weight="0.25"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginStart="7dp"
+                android:text="@string/group_admin_name"
+                android:textColor="@color/colorGrey"
+                android:textSize="16sp"
+                android:singleLine="true"
+                android:layout_weight="0.55"
+                />
+
+            <TextView
+                android:id="@+id/profile_admin_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="end"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:singleLine="true"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp"
+                android:layout_weight="0.45"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:adjustViewBounds="true"
+            android:divider="@drawable/separator"
+            android:dividerPadding="3dp"
+            android:showDividers="middle">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginStart="7dp"
+                android:text="@string/number_users"
+                android:textColor="@color/colorGrey"
+                android:textSize="16sp"
+                android:singleLine="true"
+                android:layout_weight="0.25"
+                />
+
+            <TextView
+                android:id="@+id/profile_count_users"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="end"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp"
+                android:singleLine="true"
+                android:layout_weight="0.75"/>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:adjustViewBounds="true"
+            android:divider="@drawable/separator"
+            android:dividerPadding="3dp"
+            android:showDividers="middle">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginStart="7dp"
+                android:text="@string/active_tasks_group"
+                android:textColor="@color/colorGrey"
+                android:textSize="16sp"
+                android:singleLine="true"
+                android:layout_weight="0.25"
+                />
+
+            <TextView
+                android:id="@+id/profile_active_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="end"
+
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp"
+                android:singleLine="true"
+                android:layout_weight="0.75"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:adjustViewBounds="true"
+            android:divider="@drawable/separator"
+            android:dividerPadding="3dp"
+            android:showDividers="middle">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginStart="7dp"
+                android:text="@string/active_tasks_for_me"
+                android:textColor="@color/colorGrey"
+                android:textSize="16sp"
+                android:singleLine="true"
+                android:layout_weight="0.25"
+                />
+
+            <TextView
+                android:id="@+id/profile_active_for_me"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="end"
+
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp"
+                android:singleLine="true"
+                android:layout_weight="0.75"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:adjustViewBounds="true"
+            android:divider="@drawable/separator"
+            android:dividerPadding="3dp"
+            android:showDividers="middle">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginStart="7dp"
+                android:text="@string/active_tasks_from_me"
+                android:textColor="@color/colorGrey"
+                android:textSize="16sp"
+                android:singleLine="true"
+                android:layout_weight="0.25"
+                />
+
+            <TextView
+                android:id="@+id/profile_active_from_me"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="end"
+
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="0dp"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp"
+                android:singleLine="true"
+                android:layout_weight="0.75"/>
+
+        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+        <View
+            android:id="@+id/separator220"
+            style="@style/Separator"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"/>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

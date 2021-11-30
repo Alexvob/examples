@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/menu_btn_executed_project_item"
+        android:title="Выполнено"
+        android:icon="@drawable/create_task_dark"
+        android:orderInCategory="10"
+        app:showAsAction="never"
+        tools:ignore="AlwaysShowAction">
+    </item>
+
+
+    <item
+        android:id="@+id/menu_btn_edit_project_item"
+        android:title="Изменить"
+        android:icon="@drawable/create_task_dark"
+        android:orderInCategory="12"
+        app:showAsAction="never"
+        tools:ignore="AlwaysShowAction">
+    </item>
+
+    <item
+        android:id="@+id/menu_btn_delete_project_item"
+        android:title="Удалить"
+        android:icon="@drawable/create_task_dark"
+        android:orderInCategory="14"
+        app:showAsAction="never"
+        tools:ignore="AlwaysShowAction">
+    </item>
+
+    <item
+        android:id="@+id/menu_btn_delegate_project_item"
+        android:title="Делегировать"
+        android:icon="@drawable/create_task_dark"
+        android:orderInCategory="16"
+        app:showAsAction="never"
+        tools:ignore="AlwaysShowAction">
+    </item>
+
+    <item
+        android:id="@+id/menu_btn_schedule_project_item"
+        android:title="Запланировать"
+        android:icon="@drawable/create_task_dark"
+        android:orderInCategory="16"
+        app:showAsAction="never"
+        tools:ignore="AlwaysShowAction">
+    </item>
+
+    <item
+        android:id="@+id/menu_btn_history_project_item"
+        android:title="История"
+        android:icon="@drawable/create_task_dark"
+        android:orderInCategory="20"
+        app:showAsAction="never"
+        tools:ignore="AlwaysShowAction">
+    </item>
+
+
+
+</menu>

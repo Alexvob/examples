@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#212121</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccentTask">#00BCD4</color>
+    <color name="colorAccentPlan">#BFBECD</color>
+    <color name="colorAccentProject">#A49FF4</color>
+    <color name="colorToolbar">#00BCD4</color>
+    <color name="colorToolbarSecond">#BFBECD</color>
+    <color name="colorToolbarThird">#A49FF4</color>
+    <color name="colorToolbarSecond2">#BAB7C3</color>
+    <color name="colorToolbarSecondOld">#EBCEFF</color>
+    <color name="bottomBar">#3D3D42</color>
+    <color name="planingSelector">#AAAFAEB7</color>
+
+    <color name="colorSpinnerRed">#FF0000</color>
+    <color name="colorSpinnerBlue">#00BCD4</color>
+    <color name="colorSpinnerStatisticPeriod">#BFBECD</color>
+    <color name="colorSpinner">#E2E3E4</color>
+    <color name="colorTaskListCard">#31EFEFEF</color>
+    <color name="colorTaskListCardGrey">#0C727272</color>
+    <color name="colorTaskListRecyclerView">#87E8E4E4</color>
+    <color name="colorCardViewMain">#D9F4F4F4</color>
+    <color name="colorGrey">#B6B6B6</color>
+
+    <color name="colorBackgroundDescTask">#43E2E3E4</color>
+    <color name="colorHintDescTask">#D81B60</color>
+    <color name="colorDescBtnDone">#CAFFC0</color>
+    <color name="colorDescBtnActivate">#FFF2F6</color>
+
+
+    <color name="colorBarChartActive">#FFB8C7</color>
+    <color name="colorBarChartSuccess">#58E3EB</color>
+    <color name="colorBarChartCanceled">#CCCCCC</color>
+
+
+    <color name="colorOverdueTasks">#D0924747</color>
+    <color name="colorProgressProject">#93FFBB</color>
+
+    <color name="colorPieChartGold">#71FBCA06</color>
+    <color name="colorPieChartDarkGold">#FFC107</color>
+
+
+</resources>
+
+<!-- #AFE2E3E4 #43E2E3E4 -->

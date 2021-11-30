@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:gravity="top"
+    android:orientation="vertical"
+    android:windowSoftInputMode="stateAlwaysHidden"
+    tools:layout_editor_absoluteX="50dp"
+    tools:layout_editor_absoluteY="59dp">
+
+    <include
+        layout="@layout/toolbar_third"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                style="@style/HintTextProject"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="10dp"
+                android:text="Заголовок проекта:"/>
+
+
+            <EditText
+                android:id="@+id/desc_project"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:hint="Введите заголовок проекта"
+                android:inputType="textCapSentences|textMultiLine"
+                android:maxLength="300"
+                android:maxLines="30"
+                android:minLines="2"
+                android:scrollbars="vertical" />
+
+
+            <TextView
+                style="@style/HintTextProject"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="10dp"
+                android:text="Сделать проект публичным - видимым всей группе, или приватным - видимым только вам:"/>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+            <TextView
+                style="@style/HintTextProject"
+                android:layout_width="0dp"
+                android:layout_weight="0.4"
+                android:layout_marginStart="12dp"
+                android:text="Публичный"/>
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_visibility_project"
+                android:layout_width="0dp"
+                android:layout_weight="0.2"
+                android:layout_height="wrap_content"
+                app:thumbTint="@color/colorToolbarThird"
+                app:trackTint="@color/colorGrey"
+                android:layout_marginStart="10dp"/>
+
+
+                <TextView
+                    style="@style/HintTextProject"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.4"
+                    android:layout_marginStart="12dp"
+                    android:text="Приватный"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>
+

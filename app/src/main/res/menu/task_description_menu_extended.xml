@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <!--
+        <item
+            android:id="@+id/menu_home"
+            android:title="home"
+            android:icon="@drawable/home_page"
+            android:orderInCategory="10"
+            app:showAsAction="always">
+        </item>
+    -->
+    <group android:id="@+id/group_extended_desc_task">
+
+        <item
+            android:id="@+id/menu_done_task"
+            android:title="@string/done"
+            android:icon="@drawable/done_task_dark"
+            android:orderInCategory="10"
+            app:showAsAction="always">
+        </item>
+
+        <item
+            android:id="@+id/menu_deactivate"
+            android:title="@string/deactivate"
+            android:icon="@drawable/list"
+            android:orderInCategory="10"
+            app:showAsAction="never">
+        </item>
+
+        <item
+            android:id="@+id/menu_activate"
+            android:title="@string/activate"
+            android:icon="@drawable/list"
+            android:orderInCategory="10"
+            app:showAsAction="never">
+        </item>
+
+
+        <item
+            android:id="@+id/menu_delete"
+            android:title="@string/delete"
+            android:icon="@drawable/list"
+            android:orderInCategory="11"
+            app:showAsAction="never">
+        </item>
+
+
+        <item
+            android:id="@+id/menu_help"
+            android:title="@string/help"
+            android:orderInCategory="20"
+            app:showAsAction="never">
+        </item>
+
+    </group>
+
+<!--
+    <item android:id="@+id/action_search"
+        android:title="@string/action_search"
+        android:icon="@drawable/ic_search"
+        android:orderInCategory="10"
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+-->
+
+
+
+</menu>

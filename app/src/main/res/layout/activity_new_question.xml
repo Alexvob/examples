@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="top"
+    tools:layout_editor_absoluteY="59dp"
+    tools:layout_editor_absoluteX="50dp"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:windowSoftInputMode="stateAlwaysHidden">
+
+
+    <include
+        layout="@layout/toolbar_second"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <ScrollView
+        android:id="@+id/scroll_desc_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                style="@style/HintTextPlan"
+                android:text="@string/question_desc_hint"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp">
+            </TextView>
+
+
+            <EditText
+                android:id="@+id/desc_question"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="5dp"
+                android:hint="@string/enter_question_desc"
+                android:inputType="textCapSentences|textMultiLine"
+                android:minLines="2"
+                android:maxLines="30"
+                android:scrollbars="vertical"
+                android:maxLength="3000" />
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/HintTextPlan"
+                    android:text="@string/change_question_limit"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/time_limit"
+                    style="@style/HintTextPlan"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="10dp">
+                </TextView>
+
+            </LinearLayout>
+
+
+
+                <SeekBar
+                    android:id="@+id/time_limit_question"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="9"
+                    android:progress="1"
+                    android:contentDescription="@string/change_question_limit"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="20dp">
+
+                </SeekBar>
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

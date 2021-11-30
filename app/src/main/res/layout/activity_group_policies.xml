@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".group.GroupPoliciesActivity"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+    <RadioGroup
+        android:id="@+id/radioGroup_policies_task_other"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginStart="24dp"
+            android:text="Видимость чужих задач всем участникам группы"/>
+
+        <RadioButton
+            android:id="@+id/radio_policies_task_other_allow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="Чужие задачи видны всем участникам группы"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:id="@+id/radio_policies_task_other_deny"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="Чужие задачи не видны участникам группы"
+            android:layout_weight="1" />
+
+    </RadioGroup>
+
+
+    <View style="@style/Separator"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup_policies_task"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginStart="24dp"
+            android:text="Кому можно направлять задачи"/>
+
+        <RadioButton
+            android:id="@+id/radio_policies_task_all"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="Всем участникам группы"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:id="@+id/radio_policies_task_child"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="Непосредственному руководителю и подчиненным"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:id="@+id/radio_policies_task_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="Вышестоящим руководителям и подчиненным"
+            android:layout_weight="1" />
+
+
+    </RadioGroup>
+
+    <View style="@style/Separator"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup_policies_project"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginStart="24dp"
+            android:text="Кому можно выбирать ответственным в проектах"/>
+
+        <RadioButton
+            android:id="@+id/radio_policies_project_all"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="Всем участникам группы"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:id="@+id/radio_policies_project_child"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="Непосредственному руководителю и подчиненным"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:id="@+id/radio_policies_project_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="Вышестоящим руководителям и подчиненным"
+            android:layout_weight="1" />
+
+    </RadioGroup>
+
+    <View style="@style/Separator"/>
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginStart="24dp"
+                android:text="В течении скольки дней руководитель может менять прогресс выполнения планов подчиненных"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/period_plan_control_sb"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        />
+
+            <TextView
+                android:id="@+id/changed_period_plan_control"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="15dp"
+                />
+
+
+            </LinearLayout>
+
+    <View style="@style/Separator"/>
+
+
+    <CheckedTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+        android:checked="true"
+        android:gravity="center"
+        android:text="Test"
+        android:layout_marginStart="24dp"
+        android:textSize="18sp"
+        />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

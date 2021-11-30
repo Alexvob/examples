@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".user.UserEditingActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="top"
+        tools:layout_editor_absoluteY="59dp"
+        tools:layout_editor_absoluteX="50dp">
+
+
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view23"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        app:cardMaxElevation="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        app:contentPadding="0dp">
+
+        <LinearLayout
+
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+            <TextView
+                style="@style/HintTextAdmin"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="5dp"
+                android:text="Изменить пользователя"/>
+
+            <Spinner
+                android:id="@+id/change_edit_user"
+                android:layout_width="300dp"
+                android:layout_height="48dp"
+                android:spinnerMode="dialog"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/delete_user_hint"
+                android:prompt="@string/prompt_change_user"/>
+
+
+            <EditText android:id="@+id/edit_fio_user"
+                android:layout_width="300dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                android:cursorVisible="true"
+                android:hint="@string/name_admin"
+                android:inputType="textCapSentences"
+                android:layout_marginTop="0dp"
+                android:singleLine="true" />
+
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="5dp"
+                android:text="@string/name_admin_hint"/>
+
+            <EditText android:id="@+id/edit_phone_num"
+                android:layout_width="300dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                android:cursorVisible="true"
+                android:hint="@string/restore_pass_phone_num_hint"
+                android:inputType="phone"
+                android:singleLine="true" />
+
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="5dp"
+                android:text="@string/example_phone_number"/>
+
+
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="5dp"
+                android:text="Непосредственный руководитель"
+                android:layout_marginTop="10dp"/>
+
+            <Spinner
+                android:id="@+id/edit_change_parent"
+                android:layout_width="300dp"
+                android:layout_height="48dp"
+                android:spinnerMode="dialog"
+                android:layout_gravity="center_horizontal"
+                android:prompt="@string/prompt_change_user"
+                android:layout_marginBottom="0dp"/>
+            <!--android:entries="@array/change_role"-->
+
+
+            <Button android:id="@+id/edit_user_btn"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Изменить пользователя"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:onClick="editUser" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+    </ScrollView>
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

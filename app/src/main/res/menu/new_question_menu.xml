@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/menu_btn_create_question"
+        android:title="@string/create_task_btn"
+        android:icon="@drawable/create_task_dark"
+        android:orderInCategory="10"
+        app:showAsAction="always"
+        tools:ignore="AlwaysShowAction">
+    </item>
+
+    <item
+        android:id="@+id/menu_help"
+        android:title="@string/help"
+        android:orderInCategory="20"
+        app:showAsAction="never">
+    </item>
+
+
+</menu>

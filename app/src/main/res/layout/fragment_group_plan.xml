@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/planingSelector"
+            android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/select_user_plan_group"
+                    android:layout_height="48dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.60"
+                    android:prompt="@string/prompt_change_user"
+                    android:layout_gravity="start"
+
+                    android:spinnerMode="dropdown" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/select_date_plan_group"
+                    android:layout_height="48dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.4"
+                    android:clickable="true"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:paddingTop="0dp"
+                    android:textSize="18sp"
+                    android:focusable="true"
+                    android:contentDescription="@string/hint_tvDate"/>
+
+        </LinearLayout>
+
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggleButtonsGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:checkedButton="@id/btn_toggle_plan_group"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+                <Button
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:id="@+id/btn_toggle_plan_group"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.50"
+                    android:layout_height="wrap_content"
+                    android:text="Планы" />
+
+                <Button
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:id="@+id/btn_toggle_stat_group"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_height="wrap_content"
+                    android:text="Статистика" />
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/root_group_plan_statistic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="end">
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Период: "
+                                    android:paddingTop="8dp" />
+
+                                <Spinner
+                                    android:id="@+id/select_period_statistic_plan_group"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="48dp"
+                                    android:layout_gravity="end"
+                                    android:prompt="@string/select_period_statistic_plan"
+                                    android:spinnerMode="dropdown" />
+
+                        </LinearLayout>
+
+                        <include
+                            layout="@layout/table_plan_statistic"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                </LinearLayout>
+
+
+        </ScrollView>
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/plan_recycler_view_group"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:paddingBottom="58dp"
+            android:contentDescription="@string/hint_task_recycler_view">
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+</LinearLayout>
+

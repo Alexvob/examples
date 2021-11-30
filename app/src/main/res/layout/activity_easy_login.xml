@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".group.EasyLoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+
+        tools:layout_editor_absoluteY="59dp"
+        tools:layout_editor_absoluteX="50dp">
+
+
+        <include
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/app_name"
+            android:textColor="@color/colorAccent"
+            android:textSize="30sp"
+            />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view39"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="5dp"
+            app:cardMaxElevation="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_gravity="center_horizontal"
+            app:contentPadding="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <EditText android:id="@+id/login_easy"
+                    android:layout_width="300dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal"
+                    android:cursorVisible="true"
+                    android:hint="@string/restore_pass_phone_num_hint"
+                    android:inputType="textVisiblePassword|textNoSuggestions"
+                    android:layout_marginTop="10dp"
+                    android:singleLine="true" />
+
+                <TextView
+
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/example_phone_number"/>
+
+
+                <Button android:id="@+id/login_btn_easy"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/title_login_screen"
+                    android:onClick="loginOnclick" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <View
+            android:layout_width="300dp"
+            android:layout_height="2.8dp"
+            android:id="@+id/separator"
+            android:layout_gravity="center_horizontal"
+            android:visibility="visible"
+            android:layout_marginTop="40dp"
+            android:background="@android:color/darker_gray"/>
+
+
+        <TextView
+            android:id="@+id/link_to_create_group"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/create_group_hint"/>
+
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
